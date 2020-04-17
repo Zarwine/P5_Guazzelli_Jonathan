@@ -50,7 +50,7 @@ class Home
         
 
         } else {
-            $pf_article = new pf_article();
+            $pf_article = new Pf_article();
             $myView = new View('create');
             $myView->render(array('pf_article' => $pf_article));
         }

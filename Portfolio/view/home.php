@@ -24,12 +24,57 @@ if(session_status() == PHP_SESSION_NONE){
 </div>
 </section>
 
+<a class="anchor" id="anchor_section_service"></a>
 <section id="section_service">
 <h1>Section services</h1>
+<h2>Un sous titre</h2>
+<div class="service_container">
+    <div class="liste_gauche">
+        <ul>
+            <li>
+                <i class="icone_service fas fa-wrench"></i>
+                <h4>nom du service</h4>
+                <p>Description du service sur plusieurs lignes.Description du service.</p>
+            </li>
+            <li>
+                <i class="icone_service fas fa-wrench"></i>
+                <h4>nom du service</h4>
+                <p>Description du serviceDescription du service sur plusieurs.</p>
+            </li>
+            <li>
+                <i class="icone_service fas fa-wrench"></i>
+                <h4>nom du service</h4>
+                <p>Description du serviceDescription du service sur plusieurs lignes.Description.</p>
+            </li>
+        </ul>
+    </div>
+    <img src="<?php echo ASSETS; ?>img/section_service_img.jpg" alt=''>
+    <div class="liste_droite">
+        <ul>
+            <li>
+                <i class="icone_service fas fa-wrench"></i>
+                <h4>nom du service</h4>
+                <p>Description du serviceDescription du service sur plusieurs</p>
+            </li><li>
+                <i class="icone_service fas fa-wrench"></i>
+                <h4>nom du service</h4>
+                <p>Description du serviceDescription du service sur plusieurs lignes.</p>
+            </li><li>
+                <i class="icone_service fas fa-wrench"></i>
+                <h4>nom du service</h4>
+                <p>Description du serviceDescription du service.</p>
+            </li>
+        </ul>
+    </div>
+</div>
 </section>
+
+<a class="anchor" id="anchor_section_competence"></a>
 <section id="section_competence">
 <h1>Section competences</h1>
 </section>
+
+<a class="anchor" id="anchor_section_portfolio"></a>
 <section id="section_portfolio">
     <div class="titre_livre article_content diapo_visible">
         <h1>Que trouver sur le site ?</h1>
@@ -72,14 +117,17 @@ if(session_status() == PHP_SESSION_NONE){
         
     </div>
     <div class="btn_container btn_container_bottom">
-            <a href="#" id="slider_prev_bottom"><i class="fas fa-arrow-circle-left icon-burger"></i></a>
-            <a href="#" id="slider_next_bottom"><i class="fas fa-arrow-circle-right icon-burger"></i></a>
+            <a href="#anchor_section_portfolio" id="slider_prev_bottom"><i class="fas fa-arrow-circle-left icon-burger"></i></a>
+            <a href="#anchor_section_portfolio" id="slider_next_bottom"><i class="fas fa-arrow-circle-right icon-burger"></i></a>
     </div>
 </section>
 
+<a class="anchor" id="anchor_section_apropos"></a>
 <section id="section_apropos">
 <h1>Section A propos</h1>
 </section>
+
+<a class="anchor" id="anchor_section_contact"></a>
 <section id="section_contact">
 <h1>Section Contact</h1>
 </section>

@@ -20,12 +20,12 @@ class Diaporama {
       // });
 
         this.sliderNext_bottom.addEventListener('click', e => {
-            e.preventDefault()
+
             this.slideNext(chapitresDiapo)
         });
 
         this.sliderPrev_bottom.addEventListener('click', e => {
-            e.preventDefault()
+
             this.slidePrev(chapitresDiapo)
         });
 

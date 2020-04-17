@@ -27,23 +27,25 @@ if (session_status() == PHP_SESSION_NONE) {
                 </a>
             </div>
             <ul class="nav-item end-row">
-                
-                <li class="link_jf">
-                    <a href="#section_service">Services</a>
-                </li>
-                <li class="link_jf">
-                    <a href="#section_competence">Compétences</a>
-                </li>
-                <li class="link_jf">
-                    <a href="#section_portfolio">Portfolio</a>
-                </li>
-                <li class="link_jf">
-                    <a href="#section_apropos">A propos</a>
-                </li>
-                <li class="link_jf">
-                    <a href="#section_contact">Contact</a>
-                </li>
-                <li class="separateur_menu">|</li>
+
+            <?php if(strpos($_SERVER['REQUEST_URI'], "home") !== false) : ?>              
+                    <li class="link_jf">
+                        <a class="smart_ancre1" href="#anchor_section_service">Services</a>
+                    </li>
+                    <li class="link_jf">
+                        <a class="smart_ancre2" href="#anchor_section_competence">Compétences</a>
+                    </li>
+                    <li class="link_jf">
+                        <a class="smart_ancre3" href="#anchor_section_portfolio">Portfolio</a>
+                    </li>
+                    <li class="link_jf">
+                        <a class="smart_ancre4" href="#anchor_section_apropos">A propos</a>
+                    </li>
+                    <li class="link_jf">
+                        <a class="smart_ancre5" href="#anchor_section_contact">Contact</a>
+                    </li>
+                    <li class="separateur_menu">|</li>
+                <?php endif; ?>
                 <?php if (isset($_SESSION['auth'])) : ?>
                     <?php if ($_SESSION['auth']->admin == 1) : ?>
                         <li class="link_jf">
