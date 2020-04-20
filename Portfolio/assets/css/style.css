@@ -239,7 +239,7 @@ section {
 }
 /* ------------------------------------ Section intro --------------------------------------*/
 #section_intro {
-    height: 700px;
+    height: 100vh;
     display: flex;
     justify-content: center;
 }
@@ -288,6 +288,10 @@ section {
     height: 100%;
     margin: 0 4%;
     align-self: center;
+    transition: all 0.2s ease;
+}
+.service_container img:hover{
+    transform: scale(1.08);
 }
 .service_container ul {
     padding-left:0;
@@ -297,6 +301,7 @@ section {
     flex-flow: row wrap;
     height: 125px;
     margin-bottom: 10px;
+    transition: all 0.2s ease;
 }
 .service_container li:hover .icone_service {
     color: white;
@@ -304,6 +309,9 @@ section {
 }
 .service_container li:hover h4 {
     color: rgb(0, 169, 158);    
+}
+.service_container li:hover {
+    transform: scale(1.03);
 }
 .service_container .icone_service {
     border: 3px solid rgb(139, 199, 59);
@@ -409,12 +417,63 @@ section {
 }
 /* ------------------------------------ Section A propos --------------------------------------*/
 #section_apropos {
-    height: 600px;
     background: linear-gradient(180deg, rgba(10,10,10,0.8), transparent);
 }
+#section_apropos .about_container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.2);
+    min-height:100vh;
+}
+#section_apropos .about_text {
+    width: 40%;
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+    text-shadow: 1px 1px 1px black;
+    align-self: center;
+}
+#section_apropos .about_text h4 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+#section_apropos .about_text p{
+    padding: 30px;
+}
+#section_apropos .about_button {
+    margin: auto;
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 6px;
+    text-shadow: 1px 1px 1px black;
+    box-shadow: 3px 3px 5px 1px black;
+    color: black;
+    transition: all 0.3s ease;
+}
+#section_apropos .about_button:hover {
+    color: rgb(50, 50, 50);
+}
+#section_apropos figure {
+    width: 260px;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 0 0 10%;
+    align-self: center;
+    box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.2);
+}
+#section_apropos .about_myself{
+    width: 100%;
+    height: 120%;
+}
+
 /* ------------------------------------ Section Contact --------------------------------------*/
 #section_contact {
-    height: 600px;
+    height: 100vh;
     background-color: khaki;
 }
 /* ------------------------------------ Article seul --------------------------------------*/
@@ -437,7 +496,9 @@ section {
 .article_content .titre_article {
     color: rgb(200, 200, 200);
     text-align: center;
-    font-size: 2em;
+    font-size: 3em;
+    margin-top: 0;
+    padding-top: 50px;
 }
 /* ------------------------------------ Footer        --------------------------------------*/
 .btn_up {
@@ -607,7 +668,6 @@ section {
     overflow: hidden;
     word-break: break-word;
     background-color: rgba(10,10,10,0.8);
-    border-radius: 20px;
 }
 .view_comment, .view_comment_reported{
     cursor: pointer;

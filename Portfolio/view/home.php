@@ -5,7 +5,7 @@ if(session_status() == PHP_SESSION_NONE){
 ?>
 <div class="sidebar">
     <div class="sidebar_arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-    <h2>Je suis une sidebar joyeuse</h2>
+    <h2>Mes réalisations</h2>
     <br/>
     <ul>
         <?php foreach($pf_articles as $pf_article): ?>
@@ -77,9 +77,13 @@ if(session_status() == PHP_SESSION_NONE){
 <a class="anchor" id="anchor_section_portfolio"></a>
 <section id="section_portfolio">
     <div class="titre_livre article_content diapo_visible">
-        <h1>Que trouver sur le site ?</h1>
-        <p>À l'heure du tout connecté et de l'omniprésence des réseaux sociaux, nous (Jean Forteroche et les personnes concernées par le projet) avons décidé de transposer le nouveau récit de Jean Forteroche en ligne, sous la forme de chapitres périodiques et interactifs, afin d'établir une communication bilatérale qu'empêche le support papier.
-    Ce roman est un cadeau pour vous, la communauté de lecteurs qui s'est constituée au fil des histoires abracadabrantesques dont seul Jean Forteroche détient le secret. Un cadeau pour faire entendre votre voix, et pour vous récompenser de votre indéfectible loyauté.</p>
+        <h1>Mes réalisations</h1>
+        <p>Un paragraphe qui présente mes réalisations dans l'ensemble.
+             Un paragraphe qui présente mes réalisations dans l'ensemble.
+             Un paragraphe qui présente mes réalisations dans l'ensemble.
+             Un paragraphe qui présente mes réalisations dans l'ensemble.
+             Un paragraphe qui présente mes réalisations dans l'ensemble. 
+        </p>
     <p>Cliquez sur les flèches pour visualiser les différents projets</p>
     </div>
     <div class="diapo_container">
@@ -124,7 +128,23 @@ if(session_status() == PHP_SESSION_NONE){
 
 <a class="anchor" id="anchor_section_apropos"></a>
 <section id="section_apropos">
-<h1>Section A propos</h1>
+<div class="about_container">
+    <div class="about_text">
+        <h4>A propos de moi</h4>
+        <p>Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla 
+        Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla 
+        Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla 
+        Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla 
+        Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla 
+        Du bla bla à propos de moi, bla bla bla 
+        </p>
+        <a class="about_button" href="#">Télécharger mon CV</a>
+    </div>
+    <figure>
+    <a href="#"><img class="about_myself" src="<?php echo ASSETS; ?>img/IMG_20200209_130037_recadre_BW.jpg" alt='Jonathan Guazzelli'></a>
+        <figcaption></figcaption>
+    </figure>
+</div>
 </section>
 
 <a class="anchor" id="anchor_section_contact"></a>

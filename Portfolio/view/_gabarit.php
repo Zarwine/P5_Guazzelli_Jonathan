@@ -119,7 +119,7 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
         </nav>
     </header>
-    <div class="article_container">
+    <main id="main_content" class="article_container">
 
         <div class="notif">
             <?php if (isset($_SESSION['flash'])) : ?>
@@ -133,7 +133,7 @@ if (session_status() == PHP_SESSION_NONE) {
         </div>
 
         <?php echo $contentPage; ?>
-    </div>
+    </main>
     <footer>
         <div class="btn_up">
             <a id="cRetour" href="#"><i class="fas fa-arrow-circle-up icon-btn_up"></i></a>
