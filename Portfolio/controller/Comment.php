@@ -1,5 +1,12 @@
 <?php
 
+namespace Guazzelli\Portfolio\Controller\Comment;
+
+use \Guazzelli\Portfolio\Model\CommentManager\Pf_commentManager;
+use \Guazzelli\Portfolio\Classes\View;
+use \Guazzelli\Portfolio\Model\Article\Pf_article;
+
+
 class Comment
 {
 

@@ -1,5 +1,11 @@
 <?php
 
+namespace Guazzelli\Portfolio\Model\UserManager;
+
+use \PDO;
+use \Guazzelli\Portfolio\Classes\Database;
+use \Guazzelli\Portfolio\Controller\Member\Member;
+
 class Pf_userManager extends Database //Traite toute la partie utilisateur du site.
 {
 

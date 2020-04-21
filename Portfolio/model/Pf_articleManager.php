@@ -1,5 +1,10 @@
 <?php
 
+namespace Guazzelli\Portfolio\Model\ArticleManager;
+
+use \PDO;
+use \Guazzelli\Portfolio\Model\Article\Pf_article;
+
 require_once (MODEL.'Pf_article.php');
 
 class Pf_articleManager //Traite toute la partie BDD des articles du site
@@ -21,7 +26,7 @@ class Pf_articleManager //Traite toute la partie BDD des articles du site
         $req->execute();
         while ($row = $req->fetch(PDO::FETCH_ASSOC)) {
 
-            $pf_article = new pf_article();
+            $pf_article = new Pf_article();
             $pf_article->setId($row['id']);
             $pf_article->setName($row['name']);
             $pf_article->setContent($row['content']);
@@ -45,7 +50,7 @@ class Pf_articleManager //Traite toute la partie BDD des articles du site
         $req->execute();
         $row = $req->fetch(PDO::FETCH_ASSOC);
 
-        $pf_article = new pf_article();
+        $pf_article = new Pf_article();
         $pf_article->setId($row['id']);
         $pf_article->setName($row['name']);
         $pf_article->setContent($row['content']);

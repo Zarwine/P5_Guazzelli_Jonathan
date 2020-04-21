@@ -1,4 +1,5 @@
 <?php
+namespace Guazzelli\Portfolio\Classes;
 
 class View
 {

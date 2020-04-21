@@ -1,4 +1,6 @@
 <?php
+namespace Guazzelli\Portfolio\Classes;
+
     function dateFormat($date) //Traduit la date sortie de BDD en FR
     {        
             setlocale (LC_TIME, 'fr_FR.utf8','fra'); 

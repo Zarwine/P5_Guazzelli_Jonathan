@@ -1,5 +1,9 @@
 <?php
 
+namespace Guazzelli\Portfolio\Classes;
+
+use \PDO;
+
 class Database { //Class Parent de jf_usermanager.php, se connecte a la BDD
  
     protected $bdd;

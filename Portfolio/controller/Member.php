@@ -1,4 +1,11 @@
 <?php
+namespace Guazzelli\Portfolio\Controller\Member;
+
+use \Guazzelli\Portfolio\Classes\View;
+use \Guazzelli\Portfolio\Model\ArticleManager\Pf_articleManager;
+use \Guazzelli\Portfolio\Model\CommentManager\Pf_commentManager;
+use \Guazzelli\Portfolio\Model\UserManager\Pf_userManager;
+
 require_once(MODEL . 'Pf_userManager.php');
 class Member
 {

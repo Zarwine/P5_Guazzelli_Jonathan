@@ -1,5 +1,14 @@
 <?php
 
+namespace Guazzelli\Portfolio\Classes;
+use \Guazzelli\Portfolio\Controller\Home\Home;
+use \Guazzelli\Portfolio\MyAutoLoad;
+
+MyAutoLoad::autoload('Home'); 
+//MyAutoLoad::autoload('Member'); 
+//MyAutoLoad::autoload('Comment'); 
+
+
 class Routeur
 {
     private $request;
@@ -81,11 +90,35 @@ class Routeur
 
         if(key_exists($route, $this->routes))
         {
+
             $controller = $this->routes[$route]['controller'];
             $method     = $this->routes[$route]['method'];
 
-            $currentController = new $controller();
+            var_dump($controller); //-> string(4) "Home"
+            var_dump($method); // -> string(8) "showHome"
+            
+            //$test = new Home(); //Alors que dans ce cas, la class Home est trouvée.
+            //$test->showHome($params);
+//
+            //var_dump($test);
+            //$test = new Home();
+
+            $currentController = new $controller(); //Ici $controller() == Home(), pourtant j'ai l'erreur ligne suivante.
+            //$currentController = new \Guazzelli\Portfolio\Controller\Home\$controller(); //Ici $controller() == Home(), pourtant j'ai l'erreur ligne suivante.
+
+            //var_dump($currentController);
+            //exit();
+
             $currentController->$method($params);
+            //Fatal error: Uncaught Error: Class 'Home' not found in /home/jogufrdkog/www/Portfolio/classes/Routeur.php:96 
+            //Stack trace: #0 /home/jogufrdkog/www/index.php(19): Guazzelli\Portfolio\Classes\Routeur->renderController()
+            // #1 {main} thrown in /home/jogufrdkog/www/Portfolio/classes/Routeur.php on line 96
+
+            
+
+     
+           
+
         } else {
             echo '404 Page non trouvée';          
             exit;

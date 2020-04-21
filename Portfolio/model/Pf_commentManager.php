@@ -1,4 +1,8 @@
 <?php
+namespace Guazzelli\Portfolio\Model\CommentManager;
+
+use \PDO;
+use \Guazzelli\Portfolio\Model\Comment\Pf_comment;
 
 require_once (MODEL.'Pf_comment.php');
 
