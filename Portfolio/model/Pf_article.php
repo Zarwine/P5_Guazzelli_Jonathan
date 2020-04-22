@@ -1,6 +1,5 @@
 <?php
 
-namespace Guazzelli\Portfolio\Model\Article;
 // Permet de resynchroniser les informations des articles
 
 class Pf_article

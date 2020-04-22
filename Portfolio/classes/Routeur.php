@@ -1,14 +1,5 @@
 <?php
 
-namespace Guazzelli\Portfolio\Classes;
-use \Guazzelli\Portfolio\Controller\Home\Home;
-use \Guazzelli\Portfolio\MyAutoLoad;
-
-MyAutoLoad::autoload('Home'); 
-//MyAutoLoad::autoload('Member'); 
-//MyAutoLoad::autoload('Comment'); 
-
-
 class Routeur
 {
     private $request;
@@ -88,14 +79,20 @@ class Routeur
         $route = $this->getRoute();    //Explose l'url et récupère le premier élément
         $params = $this->getParams();  //Récupère l'élement après $route pour le passer en paramettre 
 
+        try {
+            array_key_exists($route, $this->routes);
+        } catch (Exception $errorRoute) {
+            session_start();       
+            $_SESSION['flash']['danger'] = "Erreur 404 reçue : " .$errorRoute->getMessage();
+            header('Location: https://jogu.fr/home');       
+        }
+
         if(key_exists($route, $this->routes))
-        {
+        {   
+             
 
             $controller = $this->routes[$route]['controller'];
             $method     = $this->routes[$route]['method'];
-
-            var_dump($controller); //-> string(4) "Home"
-            var_dump($method); // -> string(8) "showHome"
             
             //$test = new Home(); //Alors que dans ce cas, la class Home est trouvée.
             //$test->showHome($params);
@@ -113,15 +110,14 @@ class Routeur
             //Fatal error: Uncaught Error: Class 'Home' not found in /home/jogufrdkog/www/Portfolio/classes/Routeur.php:96 
             //Stack trace: #0 /home/jogufrdkog/www/index.php(19): Guazzelli\Portfolio\Classes\Routeur->renderController()
             // #1 {main} thrown in /home/jogufrdkog/www/Portfolio/classes/Routeur.php on line 96
+             
 
-            
-
-     
-           
-
-        } else {
-            echo '404 Page non trouvée';          
-            exit;
+        } else {           
+                session_start();       
+                $_SESSION['flash']['danger'] = "Erreur 404 reçue : La page demandée n'existe pas";
+                //$_SESSION['flash']['danger'] = "Erreur 404 reçue : " .$errorRoute->getMessage();
+                header('Location: https://jogu.fr/home');                            
         }
+     
     }
 }

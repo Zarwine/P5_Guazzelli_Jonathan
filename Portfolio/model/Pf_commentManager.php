@@ -1,24 +1,13 @@
 <?php
-namespace Guazzelli\Portfolio\Model\CommentManager;
 
-use \PDO;
-use \Guazzelli\Portfolio\Model\Comment\Pf_comment;
+require_once(MODEL . 'Pf_comment.php');
 
-require_once (MODEL.'Pf_comment.php');
-
-class Pf_commentManager //Traite toute la partie Commentaire du site
+class Pf_commentManager extends Database  //Traite toute la partie Commentaire du site
 {
-    private $bdd;
-    
-    public function __construct()
-    {
-        $this->bdd = new PDO("mysql:host=jogufrdkog533.mysql.db:3306;dbname=jogufrdkog533;charset=utf8", "jogufrdkog533", "MaBDD550");
-    }
-
     public function findAll() //Trouve tous les com pour le menu d'admin
     {
         $bdd = $this->bdd;
-        
+
         $query = "SELECT * FROM pf_comment  ORDER BY id DESC";
 
         $req = $bdd->prepare($query);
@@ -41,7 +30,7 @@ class Pf_commentManager //Traite toute la partie Commentaire du site
     }
     public function findForOneArticle($article_id)  //Trouve tous les com pour un article défini
     {
-        $bdd = $this->bdd;  
+        $bdd = $this->bdd;
         $query = "SELECT * FROM pf_comment WHERE article_id = :id ORDER BY id DESC";
 
         $req = $bdd->prepare($query);
@@ -49,28 +38,27 @@ class Pf_commentManager //Traite toute la partie Commentaire du site
         $req->execute();
         $row = $req->fetchAll();
 
-        for($i = 0 ; $i< count($row); $i++){                
+        for ($i = 0; $i < count($row); $i++) {
 
-        $pf_comment = new Pf_comment();
-        $pf_comment->setId($row[$i]['id']);
-        $pf_comment->setAuteur($row[$i]['auteur']);
-        $pf_comment->setContent($row[$i]['content']);
-        $pf_comment->setCreated_at($row[$i]['created_at']);   
-        $pf_comment->setArticle_Id($row[$i]['article_id']);
-        $pf_comment->setReported($row[$i]['reported']);
-        $pf_comment->setEdited_at($row[$i]['edited_at']);
+            $pf_comment = new Pf_comment();
+            $pf_comment->setId($row[$i]['id']);
+            $pf_comment->setAuteur($row[$i]['auteur']);
+            $pf_comment->setContent($row[$i]['content']);
+            $pf_comment->setCreated_at($row[$i]['created_at']);
+            $pf_comment->setArticle_Id($row[$i]['article_id']);
+            $pf_comment->setReported($row[$i]['reported']);
+            $pf_comment->setEdited_at($row[$i]['edited_at']);
 
-        $pf_comments[] = $pf_comment;
-
+            $pf_comments[] = $pf_comment;
         }
-        if(isset($pf_comments)) { 
-        return $pf_comments;
+        if (isset($pf_comments)) {
+            return $pf_comments;
         }
     }
 
     public function find($article_id) //Trouve quel commenaitre correspond a quel article
     {
-        $bdd = $this->bdd;        
+        $bdd = $this->bdd;
         $query = "SELECT * FROM pf_comment WHERE article_id = :id";
 
         $req = $bdd->prepare($query);
@@ -79,11 +67,10 @@ class Pf_commentManager //Traite toute la partie Commentaire du site
         $pf_comments = $req->fetchAll();
 
         return $pf_comments;
-
     }
     public function findArticle($comment_id) //Trouve a quel article correspond le commentaire grace aux infos du commentaires
     {
-        $bdd = $this->bdd;        
+        $bdd = $this->bdd;
         $query = "SELECT * FROM pf_comment WHERE id = :id";
 
         $req = $bdd->prepare($query);
@@ -102,20 +89,19 @@ class Pf_commentManager //Traite toute la partie Commentaire du site
         $pf_comments = $req2->fetchAll();
 
         return $pf_comments;
-
     }
 
     public function findComment($id) //Trouve le commentaire seul
     {
-        $bdd = $this->bdd;        
+        $bdd = $this->bdd;
         $query = "SELECT * FROM pf_comment WHERE id = :id";
 
         $req = $bdd->prepare($query);
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         $req->execute();
 
-        while ($row = $req->fetch(PDO::FETCH_ASSOC)){
-        
+        while ($row = $req->fetch(PDO::FETCH_ASSOC)) {
+
             $pf_comment = new Pf_comment();
             $pf_comment->setId($row['id']);
             $pf_comment->setAuteur($row['auteur']);
@@ -124,15 +110,14 @@ class Pf_commentManager //Traite toute la partie Commentaire du site
             $pf_comment->setArticle_id($row['article_id']);
             $pf_comment->setReported($row['reported']);
             $pf_comment->setEdited_at($row['edited_at']);
-        
         }
         return $pf_comment;
     }
 
     public function create($comment, $username, $article_id)
     {
-        $bdd = $this->bdd; 
-      
+        $bdd = $this->bdd;
+
         $query = "INSERT INTO pf_comment (id, auteur, created_at, content, article_id)
         VALUES (NULL, :auteur, CURRENT_TIMESTAMP, :content, :article_id);";
 
@@ -142,11 +127,11 @@ class Pf_commentManager //Traite toute la partie Commentaire du site
         $req->bindValue(':article_id', $article_id, PDO::PARAM_INT);
         $req->execute();
     }
-    
+
     public function edit($values)
     {
-        $bdd = $this->bdd; 
-      
+        $bdd = $this->bdd;
+
         $query = "UPDATE pf_comment SET `content` = :content , `edited_at` = NOW() WHERE `pf_comment`.`id` = :id;";
 
         $req = $bdd->prepare($query);
@@ -156,11 +141,11 @@ class Pf_commentManager //Traite toute la partie Commentaire du site
 
         $req->execute();
     }
-    
+
     public function report($id)
     {
-        $bdd = $this->bdd;      
-      
+        $bdd = $this->bdd;
+
         $query = "UPDATE pf_comment SET `reported` = '1' WHERE `pf_comment`.`id` = :id;";
 
         $req = $bdd->prepare($query);
@@ -172,8 +157,8 @@ class Pf_commentManager //Traite toute la partie Commentaire du site
 
     public function acquit($id) //Remet la valeur de "reported" à 0 pour supprimer le signalement d'un com
     {
-        $bdd = $this->bdd;      
-      
+        $bdd = $this->bdd;
+
         $query = "UPDATE pf_comment SET `reported` = '0' WHERE `pf_comment`.`id` = :id;";
 
         $req = $bdd->prepare($query);
@@ -193,5 +178,4 @@ class Pf_commentManager //Traite toute la partie Commentaire du site
 
         $req->execute();
     }
-
 }

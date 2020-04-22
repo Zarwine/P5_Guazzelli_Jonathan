@@ -1,5 +1,4 @@
 <?php
-namespace Guazzelli\Portfolio\Classes;
 
     function dateFormat($date) //Traduit la date sortie de BDD en FR
     {        

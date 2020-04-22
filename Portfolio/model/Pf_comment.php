@@ -1,7 +1,5 @@
 <?php
 
-namespace Guazzelli\Portfolio\Model\Comment;
-
 // Permet de resynchroniser les informations des commentaires
 
 class Pf_comment

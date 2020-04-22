@@ -1,21 +1,9 @@
 <?php
 
-namespace Guazzelli\Portfolio\Model\ArticleManager;
-
-use \PDO;
-use \Guazzelli\Portfolio\Model\Article\Pf_article;
-
 require_once (MODEL.'Pf_article.php');
 
-class Pf_articleManager //Traite toute la partie BDD des articles du site
+class Pf_articleManager extends Database //Traite toute la partie BDD des articles du site
 {
-    private $bdd;
-    
-    public function __construct()
-    {
-        $this->bdd = new PDO("mysql:host=jogufrdkog533.mysql.db:3306;dbname=jogufrdkog533;charset=utf8", "jogufrdkog533", "MaBDD550");
-    }
-
     public function findAll() //Trouve tous les articles
     {
         $bdd = $this->bdd;

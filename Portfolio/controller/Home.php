@@ -1,11 +1,5 @@
 <?php
 
-namespace Guazzelli\Portfolio\Controller\Home;
-
-use \Guazzelli\Portfolio\Model\ArticleManager\Pf_articleManager;
-use \Guazzelli\Portfolio\Classes\View;
-use \Guazzelli\Portfolio\Model\CommentManager\Pf_commentManager;
-use \Guazzelli\Portfolio\Model\Article\Pf_article;
 
 //Gère tout ce qu'il se passe en homepage mais aussi les articles
 class Home 

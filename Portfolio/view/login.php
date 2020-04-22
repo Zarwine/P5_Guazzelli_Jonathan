@@ -12,14 +12,17 @@ if(isset($_SESSION['auth'])){
 <form class="jf_form" action="<?php echo HOST;?>login_confirm" method="POST">
     <div class="form-group">
         <label for="">Pseudo ou email</label>
-        <input type="text" name="username" required/>
+        <input id="username" type="text" name="username" required/>
+        <div id="error_username"></div>
     </div>
     <div class="form-group">
         <label for="">Mot de passe <a href="<?php echo HOST;?>forget">(Mot de passe oublié ?)</a></label>
-        <input type="password" name="password" required/>
+        <input id="password" type="password" name="password" required/>
+        <div id="error_login"></div>
     </div>
-    <button type="submit" class="button_jf">Se connecter</button>
+    <button id="btn_login" type="submit" class="button_jf">Se connecter</button>
 
 </form>
 
 </div>
+<script src="<?php echo ASSETS; ?>js/login.js"></script>
