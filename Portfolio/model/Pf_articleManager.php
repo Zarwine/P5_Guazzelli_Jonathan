@@ -12,6 +12,7 @@ class Pf_articleManager extends Database //Traite toute la partie BDD des articl
 
         $req = $bdd->prepare($query);
         $req->execute();
+
         while ($row = $req->fetch(PDO::FETCH_ASSOC)) {
 
             $pf_article = new Pf_article();
@@ -21,10 +22,28 @@ class Pf_articleManager extends Database //Traite toute la partie BDD des articl
             $pf_article->setCreated_at($row['created_at']);
 
             $pf_articles[] = $pf_article;
-
         };
 
         return $pf_articles;
+    }
+    public function findAllJSON()
+    {
+        $bdd = $this->bdd;
+        
+        $query = "SELECT * FROM pf_article ORDER BY id";
+
+        $req = $bdd->prepare($query);       
+        $req->execute();
+
+        while($row = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            $data [] = $row;
+        }
+        $diapoData = json_encode($data);
+
+        var_dump($diapoData);
+        exit();
+
     }
 
     public function find($id) //Trouve un article choisi

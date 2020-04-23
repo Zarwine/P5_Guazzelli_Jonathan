@@ -152,4 +152,5 @@ if(session_status() == PHP_SESSION_NONE){
 <h1>Section Contact</h1>
 </section>
 
+<script src="<?php echo ASSETS;?>js/diaporamaContent.js"></script>
 <script src="<?php echo ASSETS;?>js/diaporama.js"></script>

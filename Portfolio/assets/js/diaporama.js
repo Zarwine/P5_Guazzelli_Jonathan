@@ -1,23 +1,13 @@
 class Diaporama {
-    constructor(chapitre, slider_prev, slider_next, slider_prev_bottom, slider_next_bottom) {
+    constructor(chapitre, slider_prev_bottom, slider_next_bottom) {
 
         this.chapitre = document.getElementsByClassName(chapitre);
-       //this.sliderPrev = document.getElementById(slider_prev);
-       //this.sliderNext = document.getElementById(slider_next);
         this.sliderPrev_bottom = document.getElementById(slider_prev_bottom);
         this.sliderNext_bottom = document.getElementById(slider_next_bottom);
         this.index = 0
         let chapitresDiapo = this.chapitre
         let bvn_text = document.getElementsByClassName("bienvenue")[0]
         this.bvn_text = bvn_text
-
-      // this.sliderNext.addEventListener('click', e => {
-      //     this.slideNext(chapitresDiapo)
-      // });
-
-      // this.sliderPrev.addEventListener('click', e => {
-      //     this.slidePrev(chapitresDiapo)
-      // });
 
         this.sliderNext_bottom.addEventListener('click', e => {
 
@@ -30,6 +20,7 @@ class Diaporama {
         });
 
     }
+    
 
     slideNext(chapitresDiapo) {
 

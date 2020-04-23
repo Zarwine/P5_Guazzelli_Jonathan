@@ -1,8 +1,9 @@
 class Account
 {
-    constructor(target,view,com_target,com_view,com_target_r,com_view_r){
-        this.target = target;
-        this.view = view;
+    constructor(art_target,art_view,com_target,com_view,com_target_r,com_view_r){
+        
+        this.art_target = art_target;
+        this.art_view = art_view;
 
         this.com_target = com_target;
         this.com_view = com_view;
@@ -10,7 +11,7 @@ class Account
         this.com_target_r = com_target_r;
         this.com_view_r = com_view_r;
 
-        let view_button = document.getElementsByClassName(view);
+        let view_button = document.getElementsByClassName(art_view);
         view_button[0].addEventListener('click', this.showAllArticle);
 
         let com_view_button = document.getElementsByClassName(com_view);
@@ -21,7 +22,7 @@ class Account
     }
     showAllArticle(){
 
-        let jf_articles = document.getElementById(account.target);
+        let jf_articles = document.getElementById(account.art_target);
 
         if (jf_articles.classList.contains('container_not_visible')){
             jf_articles.classList.replace('container_not_visible', 'container_visible')

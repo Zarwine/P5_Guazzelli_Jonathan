@@ -52,6 +52,11 @@ if ($_SESSION['auth']->username == NULL) {
                     </div>
                 </div>
             <?php endforeach; ?>
+            <div id="pagination_nav_article">
+                <div class="prev_page"></div>
+                <div class="page"></div>
+                <div class="next_page"></div>
+            </div>
         </div>
     <?php endif; ?>
 
