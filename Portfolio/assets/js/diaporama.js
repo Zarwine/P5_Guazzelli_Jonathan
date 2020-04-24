@@ -6,9 +6,7 @@ class Diaporama {
         this.sliderNext_bottom = document.getElementById(slider_next_bottom);
         this.index = 0
         let chapitresDiapo = this.chapitre
-        let bvn_text = document.getElementsByClassName("bienvenue")[0]
-        this.bvn_text = bvn_text
-
+        
         this.sliderNext_bottom.addEventListener('click', e => {
 
             this.slideNext(chapitresDiapo)
@@ -64,4 +62,4 @@ class Diaporama {
         }
     }
 }
-let diaporama = new Diaporama('article_content', 'slider_prev', 'slider_next', 'slider_prev_bottom', 'slider_next_bottom');
+let diaporama = new Diaporama('article_content', 'slider_prev_bottom', 'slider_next_bottom');

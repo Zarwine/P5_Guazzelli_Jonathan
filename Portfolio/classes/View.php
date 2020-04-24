@@ -12,6 +12,7 @@ class View
 
     public function render($params = array()) //ajoute le contenu de la page à la variable $contentPage
     {   
+
         extract($params);
 
         $template = $this->template;

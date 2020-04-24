@@ -257,13 +257,6 @@ section {
     text-shadow: 1px 1px 0px black;
     text-align: center;
 }
-.bienvenue h1 {
-
-}
-.bienvenue h3 {
-
-}
-
 /* ------------------------------------ Section service --------------------------------------*/
 #section_service {
     min-height: 600px;
@@ -682,6 +675,51 @@ section {
     flex-flow: row wrap;
     margin: 0 2%;
 }
+.com_visible{
+    display:block;
+}
+.com_invisible{
+    display: none;
+}
+/* ------------------------------------Formulaire account Pagination-----------------------------*/
+#com_pagination_container {
+    padding: 15px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    display:flex;
+    margin:auto;
+}
+#com_pagination_prev, #com_pagination_next {
+    color: rgb(230,230,230);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: all 0.3s ease;
+}
+#com_pagination_prev:hover{
+    transform: scale(1.1);
+}
+#com_pagination_next:hover{
+    transform: scale(1.1);
+}
+#com_pagination_pages {
+    display: flex;
+}
+#com_pagination_container .page {
+    border-radius: 50%;
+    background-color: rgb(230,230,230);
+    height: 20px;
+    width: 20px;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+    cursor: pointer;
+    align-self: center;
+}
+#com_pagination_container .page:hover {
+    transform: scale(1.3);
+}
+
+
 
 /* ------------------------------------Formulaire account -----------------------------*/
 .account_gestion .jf_form .form-group {

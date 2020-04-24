@@ -33,7 +33,7 @@ if ($_SESSION['auth']->username == NULL) {
                     <a href="<?php echo HOST; ?>view/id/<?php echo $pf_article->getId(); ?>" class="titre_article_admin">
                         <h3><?php echo htmlspecialchars($pf_article->getName()); ?></h3>
                     </a>
-                    <div id="<?php echo $pf_article->getId(); ?>" class="article article_not_visible">
+                    <div id="<?php echo $pf_article->getId(); ?>" class="article">
                         <p>id = <?php echo $pf_article->getId(); ?></p>
                         <?php echo $pf_article->getContent(); ?>
                         <br />
@@ -80,11 +80,22 @@ if ($_SESSION['auth']->username == NULL) {
     <?php endif; ?>
 
     <div id="account_view_comment" class="comment_container container_not_visible">
+    <div id="com_pagination_container">
+                <div id="com_pagination_prev"><i class="fas fa-backward"></i></div>
+                <div id="com_pagination_pages">
+                    <div class="page"></div>
+                    <div class="page"></div>
+                    <div class="page"></div>
+                    <div class="page"></div>
+                    <div class="page"></div>
+                </div>
+                <div id="com_pagination_next"><i class="fas fa-forward"></i></div>
+            </div>
         <div class="comment_bis">
             <?php foreach ($pf_comments as $pf_comment) : ?>
 
-                <div class="article_comment_account">
-                    <div id="<?php echo $pf_comment->getId(); ?>" class="comment comment_not_visible">
+                <div class="article_comment_account com_invisible">
+                    <div id="<?php echo $pf_comment->getId(); ?>" class="comment">
                         <p>De <?php echo $pf_comment->getAuteur(); ?></p>
                         <p class="com_date">Écrit le : <?php echo dateFormat($pf_comment->getCreated_at()); ?></p>
 
@@ -110,8 +121,8 @@ if ($_SESSION['auth']->username == NULL) {
                     </div>
                 </div>
             <?php endforeach; ?>
-
         </div>
+
     </div>
     <div id="account_view_comment_reported" class="comment_container container_not_visible">
         <div class="reported_comment">
@@ -119,7 +130,7 @@ if ($_SESSION['auth']->username == NULL) {
                 <?php if ($pf_comment->getReported() == 1) : ?>
 
                     <div class="article_comment_account">
-                        <div id="<?php echo $pf_comment->getId(); ?>" class="comment comment_not_visible">
+                        <div id="<?php echo $pf_comment->getId(); ?>" class="comment">
                             <p>De <?php echo $pf_comment->getAuteur(); ?></p>
                             <p class="com_date">Écrit le : <?php echo dateFormat($pf_comment->getCreated_at()); ?></p>
 
@@ -174,6 +185,7 @@ if ($_SESSION['auth']->username == NULL) {
 
     <?php if ($_SESSION['auth']->admin == 1) : ?>
         <script src="<?php echo ASSETS; ?>js/account.js"></script>
+        <script src="<?php echo ASSETS; ?>js/accountPagination.js"></script>
     <?php endif; ?>
 
 </div>

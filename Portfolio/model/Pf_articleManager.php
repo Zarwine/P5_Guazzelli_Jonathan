@@ -39,11 +39,9 @@ class Pf_articleManager extends Database //Traite toute la partie BDD des articl
         {
             $data [] = $row;
         }
-        $diapoData = json_encode($data);
+        $diapoData = json_encode($data, JSON_FORCE_OBJECT);
 
-        var_dump($diapoData);
-        exit();
-
+        echo $diapoData;
     }
 
     public function find($id) //Trouve un article choisi

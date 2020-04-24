@@ -1,21 +1,11 @@
-class DiaporamaContent {
-    constructor() {
-       this.initStation()
  
+ var requete = new XMLHttpRequest();
+ requete.onreadystatechange = function() {
+    if(this.readyState == 4 && this.status == 200){
+       var myObj = JSON.parse(this.responseText)
+       console.log(myObj)
     }
-    //requête avec une API fetch pour récupérer les ressources de manière asynchrone (promesse)
-    initStation = async function () {
-       let response = await fetch(this.api_url)
-       let diapoData = await response.json()
-
-       diapoData.forEach(diapo => {
-
- 
-       });
- 
-    };
- 
-}
-
- let diapocontent = new DiaporamaContent
+ }
+requete.open('GET','https://jogu.fr/home.php', true)
+requete.send()
  
