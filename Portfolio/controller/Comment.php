@@ -1,8 +1,8 @@
 <?php
-namespace Jogu\portfolio\controller;
-use Jogu\portfolio\model\Pf_commentManager;
-use Jogu\portfolio\classes\View;
-use Jogu\portfolio\model\Pf_article;
+namespace Portfolio\controller;
+use Portfolio\model\Pf_commentManager;
+use Portfolio\classes\View;
+use Portfolio\model\Pf_article;
 
 class Comment
 {

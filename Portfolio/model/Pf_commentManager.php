@@ -1,6 +1,6 @@
 <?php
-namespace Jogu\portfolio\model;
-use Jogu\portfolio\classes\Database;
+namespace Portfolio\model;
+use Portfolio\classes\Database;
 use PDO;
 
 require_once(MODEL . 'Pf_comment.php');

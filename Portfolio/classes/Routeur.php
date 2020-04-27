@@ -1,5 +1,6 @@
 <?php
-namespace Jogu\portfolio\classes;
+namespace Portfolio\classes;
+
 
 class Routeur
 {
@@ -82,7 +83,7 @@ class Routeur
         if (key_exists($route, $this->routes)) {
 
 
-            $controller = $this->routes[$route]['controller'];
+            $controller = "Portfolio\\controller\\" . $this->routes[$route]['controller'];
             $method     = $this->routes[$route]['method'];
             $currentController = new $controller(); //Ici $controller() == Home(), pourtant j'ai l'erreur ligne suivante.
        

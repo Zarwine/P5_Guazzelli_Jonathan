@@ -1,5 +1,5 @@
 <?php
-namespace Jogu\portfolio\classes;
+namespace Portfolio\classes;
   /***************************************************
    * Only these origins are allowed to upload images *
    ***************************************************/

@@ -4,6 +4,8 @@ if ($_SESSION['auth']->username == NULL) {
     header('Location: login');
 }
 
+use Portfolio\classes\DateFormat;
+
 ?>
 <div class="page_container">
     <div class="account_header">
@@ -95,10 +97,10 @@ if ($_SESSION['auth']->username == NULL) {
                 <div class="article_comment_account com_invisible">
                     <div id="<?php echo $pf_comment->getId(); ?>" class="comment">
                         <p>De <?php echo $pf_comment->getAuteur(); ?></p>
-                        <p class="com_date">Écrit le : <?php echo dateFormat($pf_comment->getCreated_at()); ?></p>
+                        <p class="com_date">Écrit le : <?php echo DateFormat::dateFormat($pf_comment->getCreated_at()); ?></p>
 
                         <?php if ($pf_comment->getEdited_at() !== NULL) : ?>
-                            <p class="com_date">Édité le : <?php echo dateFormat($pf_comment->getEdited_at()); ?></p>
+                            <p class="com_date">Édité le : <?php echo DateFormat::dateFormat($pf_comment->getEdited_at()); ?></p>
                         <?php endif ?>
                         <p><?php echo htmlspecialchars($pf_comment->getContent()); ?></p>
                         <br />
@@ -130,10 +132,10 @@ if ($_SESSION['auth']->username == NULL) {
                     <div class="article_comment_account">
                         <div id="<?php echo $pf_comment->getId(); ?>" class="comment">
                             <p>De <?php echo $pf_comment->getAuteur(); ?></p>
-                            <p class="com_date">Écrit le : <?php echo dateFormat($pf_comment->getCreated_at()); ?></p>
+                            <p class="com_date">Écrit le : <?php echo DateFormat::dateFormat($pf_comment->getCreated_at()); ?></p>
 
                             <?php if ($pf_comment->getEdited_at() !== NULL) : ?>
-                                <p class="com_date">Édité le : <?php echo dateFormat($pf_comment->getEdited_at()); ?></p>
+                                <p class="com_date">Édité le : <?php echo DateFormat::dateFormat($pf_comment->getEdited_at()); ?></p>
                             <?php endif ?>
                             <p><?php echo htmlspecialchars($pf_comment->getContent()); ?></p>
                             <p class="reported">Commentaire signalé</p>

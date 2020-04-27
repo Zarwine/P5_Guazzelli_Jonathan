@@ -1,9 +1,9 @@
 <?php
-namespace Jogu\portfolio\controller;
-use Jogu\portfolio\classes\View;
-use Jogu\portfolio\model\Pf_articleManager;
-use Jogu\portfolio\model\Pf_commentManager;
-use Jogu\portfolio\model\Pf_userManager;
+namespace Portfolio\controller;
+use Portfolio\classes\View;
+use Portfolio\model\Pf_articleManager;
+use Portfolio\model\Pf_commentManager;
+use Portfolio\model\Pf_userManager;
 
 require_once(MODEL . 'Pf_userManager.php');
 class Member

@@ -1,5 +1,5 @@
 <?php
-namespace Jogu\portfolio\model;
+namespace Portfolio\model;
 
 // Permet de resynchroniser les informations des articles
 

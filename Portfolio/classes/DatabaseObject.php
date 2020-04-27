@@ -1,5 +1,5 @@
 <?php
-namespace Jogu\portfolio\classes;
+namespace Portfolio\classes;
 use PDO;
 use PDOException;
 

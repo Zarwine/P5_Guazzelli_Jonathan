@@ -2,7 +2,7 @@
 if(session_status() == PHP_SESSION_NONE){
     session_start();
 }
- 
+use Portfolio\classes\DateFormat;
 ?>
 
         <div class="article_content">
@@ -44,10 +44,10 @@ if(session_status() == PHP_SESSION_NONE){
                 <?php foreach($pf_comments as $pf_comment): ?>
                     <div class="article_content article_comment">
                         <h3><?php echo $pf_comment->getAuteur();?></h3>
-                        <p class="com_date">Écrit le : <?php echo dateFormat($pf_comment->getCreated_at());?></p>
+                        <p class="com_date">Écrit le : <?php echo DateFormat::dateFormat($pf_comment->getCreated_at());?></p>
 
                         <?php if($pf_comment->getEdited_at() !== NULL): ?>                                                        
-                                <p class="com_date">Édité le : <?php echo dateFormat($pf_comment->getEdited_at());?></p>    
+                                <p class="com_date">Édité le : <?php echo DateFormat::dateFormat($pf_comment->getEdited_at());?></p>    
                         <?php endif ?>                       
                         
 

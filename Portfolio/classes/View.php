@@ -1,5 +1,6 @@
 <?php
-namespace Jogu\portfolio\classes;
+namespace Portfolio\classes;
+use Portfolio\classes\DateFormat;
 
 class View
 {
@@ -17,7 +18,7 @@ class View
         extract($params);
 
         $template = $this->template;
-        include_once (CLASSES.'DateFormat.php');
+
         ob_start();
 
         include (VIEW.$template.'.php');
