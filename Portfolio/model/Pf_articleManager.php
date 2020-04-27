@@ -1,4 +1,7 @@
 <?php
+namespace Jogu\portfolio\model;
+use Jogu\portfolio\classes\Database;
+use PDO;
 
 require_once (MODEL.'Pf_article.php');
 

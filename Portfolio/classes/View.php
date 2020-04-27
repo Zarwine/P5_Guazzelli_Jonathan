@@ -1,4 +1,5 @@
 <?php
+namespace Jogu\portfolio\classes;
 
 class View
 {

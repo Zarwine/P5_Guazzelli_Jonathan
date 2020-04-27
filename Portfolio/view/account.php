@@ -3,6 +3,7 @@ if ($_SESSION['auth']->username == NULL) {
     $_SESSION['alert']['danger'] = "Il faut vous connecter";
     header('Location: login');
 }
+
 ?>
 <div class="page_container">
     <div class="account_header">

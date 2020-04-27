@@ -1,4 +1,8 @@
 <?php
+namespace Jogu\portfolio\model;
+use Jogu\portfolio\classes\DatabaseObject;
+use Jogu\portfolio\controller\Member;
+use PDO;
 
 class Pf_userManager extends DatabaseObject //Traite toute la partie utilisateur du site.
 {

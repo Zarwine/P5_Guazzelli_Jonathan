@@ -1,5 +1,9 @@
 <?php
-
+namespace Jogu\portfolio\controller;
+use Jogu\portfolio\model\Pf_articleManager;
+use Jogu\portfolio\classes\View;
+use Jogu\portfolio\model\Pf_commentManager;
+use Jogu\portfolio\model\Pf_article;
 
 //Gère tout ce qu'il se passe en homepage mais aussi les articles
 class Home 

@@ -1,4 +1,7 @@
 <?php
+namespace Jogu\portfolio\classes;
+use PDO;
+use PDOException;
 
 class DatabaseObject { //Class Parent de jf_usermanager.php, se connecte a la BDD
  

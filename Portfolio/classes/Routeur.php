@@ -1,4 +1,5 @@
 <?php
+namespace Jogu\portfolio\classes;
 
 class Routeur
 {
@@ -76,6 +77,7 @@ class Routeur
         $route = $this->getRoute();    //Explose l'url et récupère le premier élément
         $params = $this->getParams();  //Récupère l'élement après $route pour le passer en paramettre 
 
+        //Si $route = null --> Homepage
 
         if (key_exists($route, $this->routes)) {
 
