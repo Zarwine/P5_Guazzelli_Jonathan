@@ -80,17 +80,14 @@ if ($_SESSION['auth']->username == NULL) {
     <?php endif; ?>
 
     <div id="account_view_comment" class="comment_container container_not_visible">
-    <div id="com_pagination_container">
+        <div class="recadrage">
+            <div id="com_pagination_container">
                 <div id="com_pagination_prev"><i class="fas fa-backward"></i></div>
                 <div id="com_pagination_pages">
-                    <div class="page"></div>
-                    <div class="page"></div>
-                    <div class="page"></div>
-                    <div class="page"></div>
-                    <div class="page"></div>
                 </div>
                 <div id="com_pagination_next"><i class="fas fa-forward"></i></div>
             </div>
+        </div>
         <div class="comment_bis">
             <?php foreach ($pf_comments as $pf_comment) : ?>
 

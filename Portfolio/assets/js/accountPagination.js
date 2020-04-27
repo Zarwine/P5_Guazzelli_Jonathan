@@ -8,7 +8,8 @@ class AccountPagination {
         //Définis le nombre total de page en divisant le nombre de commentaire par pageContent(6) et
         //Ajoute une page supplémentaire s'il existe un modulo à la division.
         this.pageContent = 6
-        this.totalPage // = 2 pour l'exemple
+        this.totalPage // = 3 pour l'exemple
+        this.currentPageIndicator = 1 //indique la page actuelle
         this.initPageNumber(this.totalPage)
 
         //Injecte les commentaires aux pages
@@ -32,47 +33,44 @@ class AccountPagination {
 
     }
     slidePrev() {
-        
+
         let totalPage = this.totalPage
         let currentPage = this.page[this.pageIndex]
- 
 
         for (let i = 0; i < this.pageContent; i++) {
             let comment = currentPage[0][i]
 
-
             if (comment != undefined) {
-                if (comment.classList.contains("com_invisible")) {
-                    comment.classList.replace("com_invisible", "com_visible")
+                if (comment.classList.contains("com_visible")) {
+                    comment.classList.replace("com_visible", "com_invisible")
                 }
             }
         }
 
         if (this.pageIndex <= 0) {
-            this.pageIndex = totalPage -1
+            this.pageIndex = totalPage - 1
         } else {
             this.pageIndex--
         }
 
+        this.currentPageIndicator.classList.remove("page-active")
+        this.currentPageIndicator = document.querySelector(".page" + (this.pageIndex + 1))
+        this.currentPageIndicator.classList.add("page-active")
+
         currentPage = this.page[this.pageIndex]
 
-
         for (let i = 0; i < this.pageContent; i++) {
             let comment = currentPage[0][i]
-
             if (comment != undefined) {
-                if (comment.classList.contains("com_visible")) {
-                    comment.classList.replace("com_visible", "com_invisible")
+                if (comment.classList.contains("com_invisible")) {
+                    comment.classList.replace("com_invisible", "com_visible")
                 }
             }
         }
-
-
     }
     slideNext() {
-        let totalPage = this.totalPage 
+        let totalPage = this.totalPage
         let currentPage = this.page[this.pageIndex]
- 
 
         for (let i = 0; i < this.pageContent; i++) {
             let comment = currentPage[0][i]
@@ -86,11 +84,15 @@ class AccountPagination {
             }
         }
 
-        if (this.pageIndex >= totalPage -1) {
+        if (this.pageIndex >= totalPage - 1) {
             this.pageIndex = 0
         } else {
             this.pageIndex++
         }
+
+        this.currentPageIndicator.classList.remove("page-active")
+        this.currentPageIndicator = document.querySelector(".page" + (this.pageIndex + 1))
+        this.currentPageIndicator.classList.add("page-active")
 
         currentPage = this.page[this.pageIndex]
 
@@ -105,6 +107,35 @@ class AccountPagination {
             }
         }
 
+    }
+    goToPage(index) {
+        let currentPage = this.page[this.pageIndex]
+
+        for (let i = 0; i < this.pageContent; i++) {
+            let comment = currentPage[0][i]
+            if (comment != undefined) {
+                if (comment.classList.contains("com_visible")) {
+                    comment.classList.replace("com_visible", "com_invisible")
+                }
+            }
+        }
+        this.currentPageIndicator.classList.remove("page-active")
+        this.currentPageIndicator = document.querySelector(".page" + (index + 1))
+        this.currentPageIndicator.classList.add("page-active")
+
+        currentPage = this.page[index]
+
+
+        for (let i = 0; i < this.pageContent; i++) {
+            let comment = currentPage[0][i]
+
+            if (comment != undefined) {
+                if (comment.classList.contains("com_invisible")) {
+                    comment.classList.replace("com_invisible", "com_visible")
+                }
+            }
+        }
+        this.pageIndex = index
     }
 
     initPageNumber(totalPage) {
@@ -117,6 +148,20 @@ class AccountPagination {
         }
         this.totalPage = totalPage
 
+
+        for (let i = 0; i < totalPage; i++) {
+            let pageContainer = document.getElementById("com_pagination_pages")
+            let newPage = document.createElement("div")
+            newPage.className = "page page" + (i + 1)
+            newPage.innerText = i + 1
+            pageContainer.appendChild(newPage)
+
+            newPage.addEventListener("click", e => {
+                this.goToPage(i)
+            })
+        }
+        this.currentPageIndicator = document.querySelector(".page1")
+        this.currentPageIndicator.classList.add("page-active")
     }
     pushComment() {
         for (let i = 0; i < this.totalPage; i++) {

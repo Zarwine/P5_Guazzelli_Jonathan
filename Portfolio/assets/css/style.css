@@ -685,16 +685,25 @@ section {
 #com_pagination_container {
     padding: 15px;
     background-color: rgba(0,0,0,0.5);
-    border-radius: 25px;
+    border-radius: 50px;
     display:flex;
     margin:auto;
+    width: fit-content;
+    border: 1px solid white;
+}
+.recadrage {
+    width: 100%;
 }
 #com_pagination_prev, #com_pagination_next {
     color: rgb(230,230,230);
     border-radius: 50%;
     cursor: pointer;
     font-size: 1.5em;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
+    margin: 0 10px 0 0;
+}
+#com_pagination_next {
+    margin: 0 0 0 10px;
 }
 #com_pagination_prev:hover{
     transform: scale(1.1);
@@ -708,17 +717,22 @@ section {
 #com_pagination_container .page {
     border-radius: 50%;
     background-color: rgb(230,230,230);
-    height: 20px;
-    width: 20px;
     transition: all 0.3s ease;
-    margin: 0 10px;
+    margin: 0 3px;
     cursor: pointer;
     align-self: center;
+    color: rgb(50,50,50);
+    font-weight: 800;
+    padding: 3px 9px;
+    min-width: 9px;
 }
 #com_pagination_container .page:hover {
     transform: scale(1.3);
 }
-
+#com_pagination_container .page-active {
+    background-color: inherit;
+    color: rgb(230,230,230);
+}
 
 
 /* ------------------------------------Formulaire account -----------------------------*/
