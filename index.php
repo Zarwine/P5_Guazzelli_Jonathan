@@ -2,7 +2,7 @@
 include_once('_config.php');
 MyAutoLoad::start();
 use Portfolio\classes\Routeur;
-//MyAutoLoad::autoload("routeur");
+
 if(!isset($_GET['r'])){
     header('Location: home');
 }

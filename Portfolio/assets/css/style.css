@@ -346,14 +346,97 @@ section {
 }
 /* ------------------------------------ Section competence --------------------------------------*/
 #section_competence {
-    height: 600px;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0)), url(../../assets/img/jugobg_blanc_2500.jpg);
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url(../../assets/img/jugobg_blanc_2500.jpg);
     background-position: center;
     background-attachment: local, fixed;
     background-repeat: no-repeat;
     background-size: cover;
-
+    overflow: hidden;
 }
+.competence_container{
+    display: flex;
+    justify-content: center;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    flex-flow: row wrap;
+}
+.competence_container h4{
+    padding: 20px;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.competence_container ul{
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 65px;
+    list-style-type: none;
+    pointer-events: none;
+    color: rgba(0,0,0,0);
+}  
+.competence_container .descr_intro {
+    color: rgba(230,230,230,1);
+    transform: scale(2);
+    z-index: 1;
+}
+.competence_container .descr_html {
+    transform: translateX(300px) translateY(84px) rotate(35deg);
+}
+.competence_container .descr_css {
+    transform: translateX(-354px) translateY(-53px) rotate(-35deg);
+}
+.competence_container .descr_js {
+    transform: translateX(210px) translateY(-48px) rotate(75deg);
+}
+.competence_container .descr_php {
+    transform: translateX(-34px) translateY(95px) rotate(16deg) scale(1.5);
+}
+.competence_container .descr_sql {
+    transform: translateX(166px) translateY(123px) rotate(-16deg) scale(1.5);
+}
+.competence_container .descr_autre {
+    transform: translateX(1px) translateY(21px) rotate(-6deg) scale(3);
+}
+.competence_container:hover .descr_intro{
+    color: rgba(0,0,0,0);
+    z-index: inherit;
+    transform: translateX(1px) translateY(21px) rotate(6deg) scale(3);
+}
+.comp_html:hover ~ .descr_html {
+    color: rgba(230,230,230,1);
+    transform: scale(2) translateY(35px);
+    z-index:1;
+}      
+.comp_css:hover ~ .descr_css {
+    color: rgba(230,230,230,1);
+    transform: scale(2) translateY(20px);
+    z-index:1;
+}      
+.comp_js:hover ~ .descr_js {
+    color: rgba(230,230,230,1);
+    transform: scale(2) translateY(50px);
+    z-index:1;
+}      
+.comp_php:hover ~ .descr_php {
+    color: rgba(230,230,230,1);
+    transform: scale(2) translateY(50px);
+    z-index:1;
+}      
+.comp_sql:hover ~ .descr_sql {
+    color: rgba(230,230,230,1);
+    transform: scale(2) translateY(10px);
+    z-index:1;
+}      
+.comp_autre:hover ~ .descr_autre {
+    color: rgba(230,230,230,1);
+    transform: scale(2) translateY(20px);
+    z-index:1;
+}      
+
+
+
+
 /* ------------------------------------ Section portfolio --------------------------------------*/
 #section_portfolio {
     display: flex;

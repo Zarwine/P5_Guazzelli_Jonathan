@@ -9,3 +9,5 @@
 requete.open('GET','https://jogu.fr/home.php', true)
 requete.send()
  
+//<section id="section_portfolio_JSON">
+//<div id="pf_articles_JSON"><?php echo $pf_articles_JSON?></div>

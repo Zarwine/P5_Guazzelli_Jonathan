@@ -14,7 +14,8 @@ class Routeur
         "delete"              => ["controller" => "Home",   "method" => "delArticle"],
         "edition"             => ["controller" => "Home",   "method" => "editionArticle"],
         "add"                 => ["controller" => "Home",   "method" => "addArticle"],
-        "view"                => ["controller" => "Home",   "method" => "showArticle"],             //Fin CRUD
+        "view"                => ["controller" => "Home",   "method" => "showArticle"], 
+        "portfolio"           => ["controller" => "Home",   "method" => "showPortfolio"],           //Fin CRUD
 
         "register"            => ["controller" => "Member", "method" => "showRegister"],            //Début Espace membre
         "register_confirm"    => ["controller" => "Member", "method" => "verifAll"],
@@ -79,7 +80,6 @@ class Routeur
         $params = $this->getParams();  //Récupère l'élement après $route pour le passer en paramettre 
 
         //Si $route = null --> Homepage
-
         if (key_exists($route, $this->routes)) {
 
 
@@ -94,11 +94,12 @@ class Routeur
             // #1 {main} thrown in /home/jogufrdkog/www/Portfolio/classes/Routeur.php on line 96
 
 
+        }else if(!isset($_GET['r'])){
+            header('Location: home');
         } else {
-            session_start();
-            $_SESSION['flash']['danger'] = "Erreur 404 reçue : La page demandée n'existe pas";
-            //$_SESSION['flash']['danger'] = "Erreur 404 reçue : " .$errorRoute->getMessage();
-            header('Location: https://jogu.fr/home');
+           session_start();
+           $_SESSION['flash']['danger'] = "Erreur 404 reçue : La page demandée n'existe pas";
+           header('Location: https://jogu.fr/home');
         }
 
     }
