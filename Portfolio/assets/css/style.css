@@ -365,29 +365,66 @@ section {
     margin: 0;
     cursor: pointer;
     z-index: 1;
+    font-size: 2em;
+    color: rgba(230,230,230,0);
+    text-shadow: none;
+    transition: all 0.2s ease;
 }
-
+.competence_container h3{
+    position: absolute;
+    padding: 20px;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1;
+    text-shadow: 2px 2px 1px black;
+    font-size: 2em;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+.competence_container .HS{
+    transform: translateX(-200px);
+}
+.competence_container .SF{
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgb(100,100,100);
+}
 .competence_container ul{
     position: absolute;
     transition: all 0.5s ease;
-    margin-top: 65px;
+    margin-top: 100px;
     list-style-type: none;
     pointer-events: none;
     color: rgba(0,0,0,0);
 }  
 .competence_container .descr_intro {
     color: rgba(230,230,230,1);
-    transform: scale(2);
+    transform: scale(2) translateY(25px);
+    padding: 0;
     z-index: 1;
+    text-shadow: 1px 1px 1px black;
+}
+.competence_container:hover h3{
+    color: rgba(230,230,230,0);
+    text-shadow: none;
+    background: rgba(0,0,0,0);
+    border: none;
+}
+.competence_container:hover h4{
+    color: rgba(230,230,230,1);
+    text-shadow: 2px 2px 1px black;
+}
+.competence_container h4:hover{
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgb(100,100,100);
 }
 .competence_container .descr_html {
-    transform: translateX(300px) translateY(84px) rotate(35deg);
+    transform: translateX(100px) translateY(44px) rotate(15deg);
 }
 .competence_container .descr_css {
-    transform: translateX(-354px) translateY(-53px) rotate(-35deg);
+    transform: translateX(-74px) translateY(-23px) rotate(-5deg);
 }
 .competence_container .descr_js {
-    transform: translateX(210px) translateY(-48px) rotate(75deg);
+    transform: translateX(50px) translateY(-18px) rotate(15deg);
 }
 .competence_container .descr_php {
     transform: translateX(-34px) translateY(95px) rotate(16deg) scale(1.5);
@@ -402,41 +439,44 @@ section {
     color: rgba(0,0,0,0);
     z-index: inherit;
     transform: translateX(1px) translateY(21px) rotate(6deg) scale(3);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .comp_html:hover ~ .descr_html {
     color: rgba(230,230,230,1);
-    transform: scale(2) translateY(35px);
+    transform: scale(2) translateY(26px);
     z-index:1;
+    text-shadow: 1px 1px 1px black;
 }      
 .comp_css:hover ~ .descr_css {
     color: rgba(230,230,230,1);
     transform: scale(2) translateY(20px);
     z-index:1;
+    text-shadow: 1px 1px 1px black;
 }      
 .comp_js:hover ~ .descr_js {
     color: rgba(230,230,230,1);
-    transform: scale(2) translateY(50px);
+    transform: scale(2) translateY(30px);
     z-index:1;
+    text-shadow: 1px 1px 1px black;
 }      
 .comp_php:hover ~ .descr_php {
     color: rgba(230,230,230,1);
-    transform: scale(2) translateY(50px);
+    transform: scale(2) translateY(45px) translateX(55px);
     z-index:1;
+    text-shadow: 1px 1px 1px black;
 }      
 .comp_sql:hover ~ .descr_sql {
     color: rgba(230,230,230,1);
-    transform: scale(2) translateY(10px);
+    transform: scale(2) translateY(15px);
     z-index:1;
+    text-shadow: 1px 1px 1px black;
 }      
 .comp_autre:hover ~ .descr_autre {
     color: rgba(230,230,230,1);
     transform: scale(2) translateY(20px);
     z-index:1;
-}      
-
-
-
-
+    text-shadow: 1px 1px 1px black;
+}
 /* ------------------------------------ Section portfolio --------------------------------------*/
 #section_portfolio {
     display: flex;
@@ -491,6 +531,9 @@ section {
 .invisible {
     display: none;
 }
+.pfèarticles_JSON {
+    display: none;
+}
 /* ------------------------------------ Section A propos --------------------------------------*/
 #section_apropos {
     background: linear-gradient(180deg, rgba(10,10,10,0.8), transparent);
@@ -518,20 +561,6 @@ section {
 #section_apropos .about_text p{
     padding: 30px;
 }
-#section_apropos .about_button {
-    margin: auto;
-    text-decoration: none;
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 6px;
-    text-shadow: 1px 1px 1px black;
-    box-shadow: 3px 3px 5px 1px black;
-    color: black;
-    transition: all 0.3s ease;
-}
-#section_apropos .about_button:hover {
-    color: rgb(50, 50, 50);
-}
 #section_apropos figure {
     width: 260px;
     height: 260px;
@@ -546,11 +575,72 @@ section {
     width: 100%;
     height: 120%;
 }
-
+#section_apropos .button_jf {
+    background-color: rgb(50, 50, 50);
+    padding: 20px;
+    box-shadow: 1px 1px 1px black;
+    margin: auto;
+    text-decoration: none;
+}
+#section_apropos .button_jf:hover {
+    background-color: black;
+}
 /* ------------------------------------ Section Contact --------------------------------------*/
 #section_contact {
-    height: 100vh;
-    background-color: khaki;
+    min-height: 100vh;
+    background-color: rgb(230,230,230);
+    color: rgb(50,50,50);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+#section_contact .contact_container{
+    margin: 0 20%;
+    box-shadow: 2px 1px 20px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+#section_contact .contact_footer{
+    height: 200px;
+    background-color: rgb(50,50,50);
+}
+#section_contact h1{
+    text-shadow: 1px 1px 0px black;
+    color: rgb(100,100,100);
+}
+#section_contact label {
+    margin: auto;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#section_contact .jf_form {
+    padding: 30px 30%;
+}
+#section_contact .form-group{
+    padding-left: 0px;
+}
+#section_contact .jf_form input{
+    width: 100%;
+}
+#section_contact .button_jf {
+    background-color: rgb(50, 50, 50);
+    padding: 20px;
+    box-shadow: 1px 1px 1px black;
+    margin: auto;
+}
+#section_contact input{
+    color: rgb(50,50,50);
+    padding: 2px;
+    border-radius: 3px;
+}
+#section_contact textarea{
+    background-color: rgba(0,0,0,0);
+    color: rgb(50,50,50);
+    border: solid 1px rgb(100, 100, 100);
+    padding: 2px;
+    border-radius: 3px;
+}
+#section_contact .button_jf:hover {
+    background-color: black;
 }
 /* ------------------------------------ Article seul --------------------------------------*/
 .com_crud {

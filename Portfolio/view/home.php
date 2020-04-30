@@ -75,41 +75,41 @@ if (session_status() == PHP_SESSION_NONE) {
 <section id="section_competence">
     <h1>Section competences</h1>
     <div class="competence_container">
+        <h3 class="HS">hardskill</h3>
+        <h3 class="SF">Softskill</h3>
         <ul class="descr_intro">
-            <p>Une description concernant comment j'apprends etc ...</p>
+            <li>Communication</li>
+            <li>Travail d'équipe</li>
+            <li>Adaptabilité</li>
+            <li>Analyse</li>
+            <li>Créativité</li>
+            <li>Tenacité</li>
         </ul>
         <h4 class="comp_html">HTML</h4>
         <ul class="descr_html">
-            <li>choix de sémantique pertinente</li>
-            <li>création de formulaires</li>
-            <li>utilisation d'icone type font awesome</li>
-            <li>police personnalisée</li>
-            <li>connaissance des balises meta</li>
-            <li>prise en compte des validation w3c</li>
-            <li>prise en compte de l'accessibilité WCAG</li>
-            <li>Appliquer les principes SEO</li>
+            <li>Validation w3c</li>
+            <li>Accessibilité WCAG</li>
+            <li>SEO Naturel Référencement</li>
             <li>Framework Wordpress</li>
+            <li>Création de Formulaires</li>
+            <li>Police Personnalisée</li>
         </ul>
         <h4 class="comp_css">CSS</h4>
         <ul class="descr_css">
-            <li>utilisation des flexbox</li>
-            <li>animation CSS3</li>
-            <li>prise en compte validation w3c</li>
-            <li>gestion de la responsivité avec Media Queries</li>
+            <li>Flexbox</li>
+            <li>Animation CSS3</li>
+            <li>Validation w3c</li>
+            <li>Responsivité Media Queries</li>
         </ul>
         <h4 class="comp_js">JS</h4>
         <ul class="descr_js">
             <li>Syntaxe ES6</li>
+            <li>AJAX</li>
+            <li>WebStorage</li>
+            <li>Gestion du tactile</li>
+            <li>Programmation Orienté Objet</li>
             <li>Manipulation du DOM</li>
-            <li>Gestion d'évenements</li>
-            <li>Utilisation du WebStorage</li>
-            <li>Manipulation des données d'un formulaire</li>
-            <li>Création d'un canvas et gestion du tactile</li>
-            <li>Programmation orienté objet</li>
-            <li>Fonction asynchrone API fetch</li>
-            <li>Manipulation de fichiers JSON</li>
-            <li>Réalisations de diaporama avec pagination</li>
-            <li>Librairie connue : JQuery</li>
+            <li>JQuery</li>
         </ul>
         <h4 class="comp_php">PHP</h4>
         <ul class="descr_php">
@@ -203,15 +203,15 @@ if (session_status() == PHP_SESSION_NONE) {
 <section id="section_apropos">
     <div class="about_container">
         <div class="about_text">
-            <h4>A propos de moi</h4>
-            <p>Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla
-                Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla
-                Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla
-                Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla
-                Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla Du bla bla à propos de moi, bla bla bla
-                Du bla bla à propos de moi, bla bla bla
-            </p>
-            <a class="about_button" href="#">Télécharger mon CV</a>
+            <h4>A propos de moi..</h4>
+            <p>Afin de fournir une prestation recommandable, je me tiens au courant des nouveautés.
+                J'observe ce qu'il se fait de meilleur et j'aime apprendre.
+                Le monde du développment englobe mon quotidien.
+                Il se retrouve dans mes réseaux sociaux, mes loisirs, mon couple ...
+                Ce n'est que depuis peu que je peux enfin emprunter ce chemin que je n'observai alors que de loin
+                Et j'ai bien l'intention d'enrichir mes connaissances chaque jour.
+                Ce paragraphe va être édité parcequ'il est pas ouf</p>
+            <a class="button_jf" href="<?php echo ASSETS; ?>CV-2020.pdf" download="<?php echo ASSETS; ?>CV-2020.pdf" target="_blank">Télécharger mon CV</a>
         </div>
         <figure>
             <a href="#"><img class="about_myself" src="<?php echo ASSETS; ?>img/IMG_20200209_130037_recadre_BW.jpg" alt='Jonathan Guazzelli'></a>
@@ -222,7 +222,28 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <a class="anchor" id="anchor_section_contact"></a>
 <section id="section_contact">
-    <h1>Section Contact</h1>
+    <div class="contact_container">
+        <h1>Section Contact</h1>
+        <form class="jf_form" action="contact_form" method="POST">
+            <div class="form-group">
+                <label for="">Nom & Prénom :</label>
+                <input id="username" placeholder="Nom Prénom..." type="text" name="username" />
+                <div id="error_username"></div>
+            </div>
+            <div class="form-group">
+                <label for="">E-mail :</label>
+                <input id="email" placeholder="exemple@info.com" type="email" name="email" />
+                <div id="error_email"></div>
+            </div>
+            <div class="form-group">
+                <label for="">Votre Message :</label>
+                <textarea name="message" id="comment_textarea" cols="30" rows="10" placeholder="Votre message..."></textarea>
+                <div id="error_message"></div>
+            </div>
+            <button id="btn_contact" type="submit" class="button_jf">ENVOYER</button>
+        </form>
+    </div>
+    <div class="contact_footer"></div>
 </section>
 
 <!--<script src="<?php echo ASSETS; ?>js/diaporamaContent.js"></script>-->
