@@ -2,6 +2,7 @@
 
 use Portfolio\classes\DateFormat;
 ?>
+
 <section id="section_portfolio">
     <div class="titre_livre article_content diapo_visible">
         <h1>Mes réalisations</h1>

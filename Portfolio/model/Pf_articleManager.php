@@ -38,13 +38,7 @@ class Pf_articleManager extends Database //Traite toute la partie BDD des articl
         $req = $bdd->prepare($query);       
         $req->execute();
 
-        while($row = $req->fetch(PDO::FETCH_ASSOC))
-        {
-            $data [] = $row;
-        }
-        $pf_articles_JSON = json_encode($data, JSON_FORCE_OBJECT);
-
-        return $pf_articles_JSON;
+        return $req->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function find($id) //Trouve un article choisi

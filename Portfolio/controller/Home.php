@@ -12,23 +12,21 @@ class Home
     {
 
         $manager = new Pf_articleManager();
-        $pf_articles = $manager->findAll();        
-        $pf_articles_JSON = $manager->findAllJSON();        
+        $pf_articles = $manager->findAll();               
 
         $myView = new View('home');
-        $myView->render(    array(  'pf_articles' => $pf_articles,
-                                    'pf_articles_JSON' => $pf_articles_JSON,
-                                ));
+        $myView->render(array('pf_articles' => $pf_articles));
         
     }
     public function showPortfolio($params) //HomePage avec tout les articles
     {
 
         $manager = new Pf_articleManager();
-        $pf_articles = $manager->findAll();                
+        $data = $manager->findAllJSON();  
+        $data_JSON = json_encode($data);
 
-        $myView = new View('portfolio');
-        $myView->render(array('pf_articles' => $pf_articles));
+        header("Content-type: application/json; charset=utf-8");
+        echo $data_JSON;              
         
     }
     public function showArticle($params) //Article seul avec com

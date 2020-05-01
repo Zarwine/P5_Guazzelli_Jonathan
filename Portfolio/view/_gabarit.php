@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jonathan Guazzelli - Développeur web</title>
-    <meta name="description" content="Portfolio de Jonathan Guazzelli">  
+    <meta name="description" content="Portfolio de Jonathan Guazzelli"> 
+    <link rel="shortcut icon" type="image/ico" href="<?php echo ASSETS; ?>/img/user-tie-solid.svg">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/style.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>fontawesome/css/all.css">
     <script src="https://cdn.tiny.cloud/1/rhmcwo4c3c04oqicyi140d661xaxcuor848zntmj4er65w6b/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>

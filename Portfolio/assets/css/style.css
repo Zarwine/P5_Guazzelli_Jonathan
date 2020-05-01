@@ -477,6 +477,22 @@ section {
     z-index:1;
     text-shadow: 1px 1px 1px black;
 }
+/* ------------------------------------ Section portfolio JSON --------------------------------------*/
+#section_portfolio_JSON {
+    background-color: rgb(50,50,50);
+}
+#section_portfolio_JSON .btn_container{
+    background: none;
+}
+#section_portfolio_JSON #slider_prev_bottom,
+#section_portfolio_JSON #slider_next_bottom {
+    transition: all 0.3s ease;
+}
+#section_portfolio_JSON #slider_prev_bottom:hover,
+#section_portfolio_JSON #slider_next_bottom:hover{
+    transform: scale(1.2);
+}
+
 /* ------------------------------------ Section portfolio --------------------------------------*/
 #section_portfolio {
     display: flex;
@@ -531,7 +547,7 @@ section {
 .invisible {
     display: none;
 }
-.pfèarticles_JSON {
+#pf_articles_JSON {
     display: none;
 }
 /* ------------------------------------ Section A propos --------------------------------------*/

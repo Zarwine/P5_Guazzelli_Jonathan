@@ -7,6 +7,7 @@ class Routeur
     private $request;
 
     private $routes = [
+
         "home"                => ["controller" => "Home",   "method" => "showHome"],                //Rediction vers la HomePage
 
         "create"              => ["controller" => "Home",   "method" => "createArticle"],           //Début des redirections CRUD
@@ -14,8 +15,7 @@ class Routeur
         "delete"              => ["controller" => "Home",   "method" => "delArticle"],
         "edition"             => ["controller" => "Home",   "method" => "editionArticle"],
         "add"                 => ["controller" => "Home",   "method" => "addArticle"],
-        "view"                => ["controller" => "Home",   "method" => "showArticle"], 
-        "portfolio"           => ["controller" => "Home",   "method" => "showPortfolio"],           //Fin CRUD
+        "view"                => ["controller" => "Home",   "method" => "showArticle"],           //Fin CRUD
 
         "register"            => ["controller" => "Member", "method" => "showRegister"],            //Début Espace membre
         "register_confirm"    => ["controller" => "Member", "method" => "verifAll"],
@@ -38,6 +38,8 @@ class Routeur
         "com_edit"            => ["controller" => "Comment",   "method" => "editionComment"],
         "comAcquit"           => ["controller" => "Comment",   "method" => "acquitComment"],
         "com_view"            => ["controller" => "Comment",   "method" => "showArticle"],          //Fin Commentaires
+
+        "portfolio"           => ["controller" => "Json",      "method" => "showPortfolioJson"], //Chargement JSON
 
     ];
 
@@ -79,26 +81,21 @@ class Routeur
         $route = $this->getRoute();    //Explose l'url et récupère le premier élément
         $params = $this->getParams();  //Récupère l'élement après $route pour le passer en paramettre 
 
-        //Si $route = null --> Homepage
-        if (key_exists($route, $this->routes)) {
+
+        if (key_exists($route, $this->routes)) { //S'il existe une route 
 
 
             $controller = "Portfolio\\controller\\" . $this->routes[$route]['controller'];
             $method     = $this->routes[$route]['method'];
-            $currentController = new $controller(); //Ici $controller() == Home(), pourtant j'ai l'erreur ligne suivante.
+            $currentController = new $controller(); 
        
             $currentController->$method($params);
 
-            //Fatal error: Uncaught Error: Class 'Home' not found in /home/jogufrdkog/www/Portfolio/classes/Routeur.php:96 
-            //Stack trace: #0 /home/jogufrdkog/www/index.php(19): Guazzelli\Portfolio\Classes\Routeur->renderController()
-            // #1 {main} thrown in /home/jogufrdkog/www/Portfolio/classes/Routeur.php on line 96
-
-
-        }else if(!isset($_GET['r'])){
+        }else if(!isset($_GET['r'])){        //Si $route = null --> Homepage
             header('Location: home');
         } else {
-           session_start();
-           $_SESSION['flash']['danger'] = "Erreur 404 reçue : La page demandée n'existe pas";
+           session_start();                 //Sinon la route n'existe pas
+           $_SESSION['flash']['danger'] = "Erreur 404 reçue : La page demandée n'existe pas : ". $route;
            header('Location: https://jogu.fr/home');
         }
 
