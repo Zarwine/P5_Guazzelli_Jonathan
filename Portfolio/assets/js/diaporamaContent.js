@@ -6,8 +6,8 @@ class DiapoJson {
       this.index = 0
       this.chapitresDiapo = []
 
-      console.log(this.sliderNext)
 
+      //récupère les donnés Json et ajoute les articles dans le document
       this.findJson()
       this.container = document.querySelector("#" + DOMLocation) //Defini le container du carousel
       this.articleIndex = 0                                       //index des container des articles
@@ -22,7 +22,19 @@ class DiapoJson {
          this.slidePrev(this.chapitresDiapo)
       });
 
+      window.addEventListener('keyup', e => {
+         if (e.key === 'ArrowRight' || e.key === 'Right') {
+ 
+             this.slideNext(this.chapitresDiapo)
+         }
+         else if (e.key === 'ArrowLeft' || e.key === 'Left') {
+
+             this.slidePrev(this.chapitresDiapo)
+         }
+     })
+
    }
+
    slideNext(chapitresDiapo) {
 
       event.preventDefault()
@@ -75,6 +87,7 @@ class DiapoJson {
          let articleContainer = document.createElement("div")           //container de l'article
          articleContainer.classList.add("article" + this.articleIndex)
          articleContainer.classList.add("invisible")
+         articleContainer.classList.add("articleJson")
 
          let articleTitre = document.createElement("h3")                //titre de l'article
          articleTitre.innerHTML = article.name
@@ -89,7 +102,8 @@ class DiapoJson {
          //console.log(diapoJson.chapitresDiapo)
 
       })
-
+      let article1 = document.querySelector('.article1')
+      article1.classList.replace('invisible', "visible")
    }
 
 }

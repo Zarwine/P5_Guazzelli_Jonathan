@@ -312,11 +312,15 @@ section {
     text-align: center;
     font-size: 1.8em;
     margin-top: 16px;
-    padding: 16px;
     color: rgb(139, 199, 59);
     position: absolute;
     align-self: center;
     transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
 }
 .service_container h4 {
     color: rgb(50, 50, 50);
@@ -479,7 +483,23 @@ section {
 }
 /* ------------------------------------ Section portfolio JSON --------------------------------------*/
 #section_portfolio_JSON {
-    background-color: rgb(50,50,50);
+    background-color: rgba(0,0,0,0.8);
+    margin-bottom: 40px;
+}
+#section_portfolio_JSON h1{
+    padding-top: 25px;
+}
+#section_portfolio_JSON h3{
+    font-size: 2em;
+}
+#anchor_section_competence{
+    top: -105px;
+}
+.portfolio_description {
+    margin: 1% 20%;
+}
+.portfolio_description p{
+    text-align: center;
 }
 #section_portfolio_JSON .btn_container{
     background: none;
@@ -491,6 +511,10 @@ section {
 #section_portfolio_JSON #slider_prev_bottom:hover,
 #section_portfolio_JSON #slider_next_bottom:hover{
     transform: scale(1.2);
+}
+#section_portfolio_JSON .articleJson {
+    text-align: center;
+    margin: 0 5%;
 }
 
 /* ------------------------------------ Section portfolio --------------------------------------*/
@@ -550,9 +574,15 @@ section {
 #pf_articles_JSON {
     display: none;
 }
+#portfolio_pagination_pages {
+    display:flex;
+}
 /* ------------------------------------ Section A propos --------------------------------------*/
 #section_apropos {
     background: linear-gradient(180deg, rgba(10,10,10,0.8), transparent);
+}
+#anchor_section_apropos {
+    top: -120px;
 }
 #section_apropos .about_container {
     display: flex;
@@ -604,20 +634,30 @@ section {
 /* ------------------------------------ Section Contact --------------------------------------*/
 #section_contact {
     min-height: 100vh;
-    background-color: rgb(230,230,230);
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0)),
+    url("../../assets/img/jogu_bg_contact_2500.jpg");
     color: rgb(50,50,50);
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
 }
+#anchor_section_contact {
+    top: -120px;
+}
 #section_contact .contact_container{
     margin: 0 20%;
+    background-color: rgba(250,250,250,0.4);
     box-shadow: 2px 1px 20px 20px rgba(0, 0, 0, 0.1);
     margin-bottom: 10px;
 }
 #section_contact .contact_footer{
+    text-align: center;
     height: 200px;
     background-color: rgb(50,50,50);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #section_contact h1{
     text-shadow: 1px 1px 0px black;

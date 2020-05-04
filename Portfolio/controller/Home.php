@@ -18,6 +18,17 @@ class Home
         $myView->render(array('pf_articles' => $pf_articles));
         
     }
+    public function sendEmail($params){
+        session_start();
+        if (!isset($_SESSION["auth"]->username)){
+        $_SESSION['flash']['success'] = 'Votre e-mail a bien été envoyé';
+        mail("jonathanguazzelli@hotmail.fr", 'Message de Jogu.fr', "De la part de ". $params["username"] . $params["email"] . "\r\nMessage : " . $params["message"] );
+        } else {
+            $_SESSION['flash']['success'] = 'Votre e-mail a bien été envoyé';
+            mail("jonathanguazzelli@hotmail.fr", 'Message de Jogu.fr', "De la part de ". $_SESSION["auth"]->username . " alias " . $params["username"] . "\r\nEmail : " . $_SESSION["auth"]->email . " alias " . $params["email"] . "\r\nMessage : " . $params["message"] );
+        }
+        header('Location: home');
+    }
     public function showPortfolio($params) //HomePage avec tout les articles
     {
 
@@ -119,7 +130,23 @@ class Home
         $myView = new View();
         $myView->redirect('home');
 
-    }    
+    }   
+    public function showVeloc($params)
+    {
+        header("location: https://jogu.fr/veloc/index");
+    } 
+    public function showIreki($params) 
+    {
+        header("location: https://jogu.fr/ireki/index");
+    } 
+    public function showWebAgency($params) 
+    {
+        header("location: https://jogu.fr/webagency/index");
+    } 
+    public function showForteroche($params) 
+    {
+        header("location: https://jogu.fr/forteroche/index");
+    } 
 }
 
 

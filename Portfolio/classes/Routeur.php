@@ -9,13 +9,19 @@ class Routeur
     private $routes = [
 
         "home"                => ["controller" => "Home",   "method" => "showHome"],                //Rediction vers la HomePage
+        "contact_form"        => ["controller" => "Home",   "method" => "sendEmail"],
+
+        "veloc"               => ["controller" => "Home",   "method" => "showVeloc"],               //Redirection vers les différents projets web
+        "forteroche"          => ["controller" => "Home",   "method" => "showForteroche"],
+        "ireki"               => ["controller" => "Home",   "method" => "showIreki"],
+        "webagency"           => ["controller" => "Home",   "method" => "showWebAgency"],
 
         "create"              => ["controller" => "Home",   "method" => "createArticle"],           //Début des redirections CRUD
         "modification"        => ["controller" => "Home",   "method" => "createArticle"],
         "delete"              => ["controller" => "Home",   "method" => "delArticle"],
         "edition"             => ["controller" => "Home",   "method" => "editionArticle"],
         "add"                 => ["controller" => "Home",   "method" => "addArticle"],
-        "view"                => ["controller" => "Home",   "method" => "showArticle"],           //Fin CRUD
+        "view"                => ["controller" => "Home",   "method" => "showArticle"],             //Fin CRUD
 
         "register"            => ["controller" => "Member", "method" => "showRegister"],            //Début Espace membre
         "register_confirm"    => ["controller" => "Member", "method" => "verifAll"],
@@ -39,7 +45,7 @@ class Routeur
         "comAcquit"           => ["controller" => "Comment",   "method" => "acquitComment"],
         "com_view"            => ["controller" => "Comment",   "method" => "showArticle"],          //Fin Commentaires
 
-        "portfolio"           => ["controller" => "Json",      "method" => "showPortfolioJson"], //Chargement JSON
+        "portfolio"           => ["controller" => "Json",      "method" => "showPortfolioJson"],    //Chargement JSON
 
     ];
 
