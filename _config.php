@@ -20,7 +20,7 @@ class MyAutoLoad
         define("MODEL", ROOT."model/");
         define("CLASSES", ROOT.'classes/');
         
-        define("ASSETS", HOST."/Portfolio/assets/");
+        define("ASSETS", HOST."Portfolio/assets/");
     }
 
     public static function autoload($class)

@@ -184,29 +184,29 @@ if (session_status() == PHP_SESSION_NONE) {
         <form class="jf_form" action="contact_form" method="POST">
             <?php if (isset($_SESSION["auth"]->username)) : ?>
                 <div class="form-group">
-                    <label for="">Nom & Prénom :</label>
+                    <label for="username">Nom & Prénom :</label>
                     <input id="username" placeholder="<?php echo $_SESSION["auth"]->username; ?>" type="text" name="username" />
                     <div id="error_username"></div>
                 </div>
                 <div class="form-group">
-                    <label for="">E-mail :</label>
+                    <label for="email">E-mail :</label>
                     <input id="email" placeholder="<?php echo $_SESSION["auth"]->email; ?>" type="email" name="email" />
                     <div id="error_email"></div>
                 </div>
             <?php else : ?>
                 <div class="form-group">
-                    <label for="">Nom & Prénom :</label>
+                    <label for="username">Nom & Prénom :</label>
                     <input id="username" placeholder="Nom Prénom..." type="text" name="username" />
                     <div id="error_username"></div>
                 </div>
                 <div class="form-group">
-                    <label for="">E-mail :</label>
+                    <label for="email">E-mail :</label>
                     <input id="email" placeholder="exemple@info.com" type="email" name="email" />
                     <div id="error_email"></div>
                 </div>
             <?php endif; ?>
             <div class="form-group">
-                <label for="">Votre Message :</label>
+                <label for="comment_textarea">Votre Message :</label>
                 <textarea name="message" id="comment_textarea" cols="30" rows="10" placeholder="Votre message..."></textarea>
                 <div id="error_message"></div>
             </div>

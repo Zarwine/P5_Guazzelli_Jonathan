@@ -18,6 +18,7 @@ if($_SESSION['auth']->admin == 0){
         <input class="button_jf" type="submit" value="éditer"/>
     </form>
 </div>
+<script src="https://cdn.tiny.cloud/1/rhmcwo4c3c04oqicyi140d661xaxcuor848zntmj4er65w6b/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
         tinymce.init({
             selector: 'textarea#mytextarea',
