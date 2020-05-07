@@ -19,8 +19,10 @@ class MyAutoLoad
         define("VIEW", ROOT."view/");
         define("MODEL", ROOT."model/");
         define("CLASSES", ROOT.'classes/');
+ 
         
         define("ASSETS", HOST."Portfolio/assets/");
+        define("UPLOAD", HOST."Portfolio/upload/");
     }
 
     public static function autoload($class)

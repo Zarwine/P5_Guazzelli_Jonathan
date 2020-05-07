@@ -4,9 +4,7 @@ namespace Portfolio\controller;
 
 class TinyMCEImageUpload
 {
-  public function imageFolder($params) {
 
-  }
   public function uploadImg()
   {
     /***************************************************
@@ -18,7 +16,7 @@ class TinyMCEImageUpload
     /*********************************************
      * Change this line to set the upload folder *
      *********************************************/
-    $imageFolder = "https://jogu.fr/assets/";
+    $imageFolder =  $_SERVER['DOCUMENT_ROOT'] . '/Portfolio/upload/';
 
     reset($_FILES);
     $temp = current($_FILES);
@@ -56,10 +54,12 @@ class TinyMCEImageUpload
       $filetowrite = $imageFolder . $temp['name'];
       move_uploaded_file($temp['tmp_name'], $filetowrite);
 
+      $trueURL = "https://jogu.fr//Portfolio/upload/" . $temp["name"];
+
       // Respond to the successful upload with JSON.
       // Use a location key to specify the path to the saved image resource.
       // { location : '/your/uploaded/image/file'}
-      echo json_encode(array('location' => $filetowrite));
+      echo json_encode(array('location' => $trueURL));
     } else {
       // Notify editor that the upload failed
       header("HTTP/1.1 500 Server Error");

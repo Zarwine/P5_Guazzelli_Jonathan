@@ -738,6 +738,25 @@ section {
     text-align: center;
     font-size: 2em;
 }
+.articleJson a {
+    background-color: rgb(50,50,50);
+    padding: 10px;
+    border-radius: 3px;
+    color: rgb(200,200,200);
+    text-decoration: none;
+}
+.article_content a {
+    background-color: rgb(50,50,50);
+    padding: 10px;
+    border-radius: 3px;
+    color: rgb(200,200,200);
+    text-decoration: none;
+}
+.article_content a:hover,
+.articleJson a:hover {
+    background-color: rgb(70,70,70);
+    text-decoration: underline;
+}
 /* ------------------------------------ Footer        --------------------------------------*/
 .btn_up {
     position: fixed;

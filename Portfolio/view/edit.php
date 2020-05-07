@@ -28,15 +28,15 @@ if ($_SESSION['auth']->admin == 0) {
         toolbar: 'undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl',
         toolbar_sticky: true,
         // without images_upload_url set, Upload tab won't show up
-        images_upload_url: '<?php echo HOST;?>TinyMCEImageUpload',
-        images_upload_base_path: '/',
+        images_upload_url: '<?php echo HOST; ?>TinyMCEImageUpload',
+        images_upload_base_path: 'https://jogu.fr/Portfolio/upload/',
         automatic_uploads: true,
         images_upload_handler: function(blobInfo, success, failure) {
             var xhr, formData;
 
             xhr = new XMLHttpRequest();
             xhr.withCredentials = false;
-            xhr.open('POST', '<?php echo HOST;?>TinyMCEImageUpload');
+            xhr.open('POST', '<?php echo HOST; ?>TinyMCEImageUpload');
 
             xhr.onload = function() {
                 var json;
@@ -45,20 +45,23 @@ if ($_SESSION['auth']->admin == 0) {
                     failure('HTTP Error: ' + xhr.status);
                     return;
                 }
-
+                console.log(xhr.responseText)
                 json = JSON.parse(xhr.responseText);
 
-                if (!json || typeof json.file_path != 'string') {
+                if (!json || typeof json.location != 'string') {
                     failure('Invalid JSON: ' + xhr.responseText);
                     return;
                 }
-
-                success(json.file_path);
+                console.log(json.location)
+                success(json.location);
             };
+
+            console.log(blobInfo.blob())
 
             formData = new FormData();
             formData.append('file', blobInfo.blob(), blobInfo.filename());
-
+            
+            
             xhr.send(formData);
         },
         autosave_ask_before_unload: true,
@@ -67,59 +70,9 @@ if ($_SESSION['auth']->admin == 0) {
         autosave_restore_when_empty: false,
         autosave_retention: "2m",
         image_advtab: true,
-        content_css: '//www.tiny.cloud/css/codepen.min.css',
-        link_list: [{
-                title: 'My page 1',
-                value: 'http://www.tinymce.com'
-            },
-            {
-                title: 'My page 2',
-                value: 'http://www.moxiecode.com'
-            }
-        ],
-        image_list: [{
-                title: 'My page 1',
-                value: 'http://www.tinymce.com'
-            },
-            {
-                title: 'My page 2',
-                value: 'http://www.moxiecode.com'
-            }
-        ],
-        image_class_list: [{
-                title: 'None',
-                value: ''
-            },
-            {
-                title: 'Some class',
-                value: 'class-name'
-            }
-        ],
+        content_css: '//www.tiny.cloud/css/codepen.min.css',        
         importcss_append: true,
-        height: 400,
-        file_picker_callback: function(callback, value, meta) {
-            /* Provide file and text for the link dialog */
-            if (meta.filetype === 'file') {
-                callback('https://www.google.com/logos/google.jpg', {
-                    text: 'My text'
-                });
-            }
-
-            /* Provide image and alt text for the image dialog */
-            if (meta.filetype === 'image') {
-                callback('https://www.google.com/logos/google.jpg', {
-                    alt: 'My alt text'
-                });
-            }
-
-            /* Provide alternative source and posted for the media dialog */
-            if (meta.filetype === 'media') {
-                callback('movie.mp4', {
-                    source2: 'alt.ogg',
-                    poster: 'https://www.google.com/logos/google.jpg'
-                });
-            }
-        },
+        height: 400,       
         templates: [{
                 title: 'New Table',
                 description: 'creates a new table',

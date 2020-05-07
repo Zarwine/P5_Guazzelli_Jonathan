@@ -47,8 +47,7 @@ class Routeur
 
         "portfolio"           => ["controller" => "Json",               "method" => "showPortfolioJson"],    //Chargement JSON
         "TinyMCEImageUpload"  => ["controller" => "TinyMCEImageUpload", "method" => "uploadImg"],    //
-        "assets"              => ["controller" => "TinyMCEImageUpload", "method" => "imageFolder"],    //
-
+        
     ];
 
     public function __construct($request)
