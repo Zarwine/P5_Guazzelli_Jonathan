@@ -45,7 +45,9 @@ class Routeur
         "comAcquit"           => ["controller" => "Comment",   "method" => "acquitComment"],
         "com_view"            => ["controller" => "Comment",   "method" => "showArticle"],          //Fin Commentaires
 
-        "portfolio"           => ["controller" => "Json",      "method" => "showPortfolioJson"],    //Chargement JSON
+        "portfolio"           => ["controller" => "Json",               "method" => "showPortfolioJson"],    //Chargement JSON
+        "TinyMCEImageUpload"  => ["controller" => "TinyMCEImageUpload", "method" => "uploadImg"],    //
+        "assets"              => ["controller" => "TinyMCEImageUpload", "method" => "imageFolder"],    //
 
     ];
 
