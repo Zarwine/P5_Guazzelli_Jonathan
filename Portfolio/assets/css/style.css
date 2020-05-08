@@ -350,6 +350,7 @@ section {
 /* ------------------------------------ Section competence --------------------------------------*/
 #section_competence {
     height: 100vh;
+    min-height: 550px;
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.3)), url(../../assets/img/jugobg_blanc_2500.jpg);
     background-position: center;
     background-attachment: local, fixed;
@@ -633,6 +634,7 @@ section {
 /* ------------------------------------ Section Contact --------------------------------------*/
 #section_contact {
     min-height: 100vh;
+    margin-top: 0;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0)),
     url("../../assets/img/jogu_bg_contact_2500.jpg");
     background-size: cover;
@@ -643,7 +645,7 @@ section {
     justify-content: space-between;
 }
 #anchor_section_contact {
-    top: -120px;
+    top: -80px;
 }
 #section_contact .contact_container{
     margin: 0 20%;
@@ -889,6 +891,9 @@ section {
 #account_view_article{
     margin: 0 5%;
 }
+#account_view_article a{
+background-color: inherit;
+}
 #account_view_article .titre_article_admin{
     text-decoration: none;
     color: inherit;
@@ -1066,6 +1071,9 @@ section {
         margin: 0;
         list-style: none;
     }
+    header .menu-burger hr{
+        margin: 0;
+    }
     header .menu-burger li{
         background-color: rgba(0,0,0,0.8)
     }
@@ -1146,16 +1154,44 @@ section {
         left: 0;
     }
     /* ------------------------------------Section Competence-----------------------------*/
+    .competence_container {
+        flex-flow: column wrap;
+        align-items: center;
+    }
     .competence_container .SF {
         position: inherit;
+        width: 70%;
+        text-align: center;
     }
     .competence_container .HS {
         position: inherit;
+        width: 70%;
+        text-align: center;
         transform: translateX(0px);
     }
-    .competence_container:hover h4 {
-        transform: translateY(-130px);
+    .competence_container h4 {
+        position: absolute;
+        transform: translateX(251px);
     }
+    .competence_container .comp_html {        
+        transform: translate(-100px, -80px);
+    }
+    .competence_container .comp_css {
+        transform: translate(10px, -80px);
+    }
+    .competence_container .comp_js {
+        transform: translate(100px, -80px);
+    }
+    .competence_container .comp_php {
+        transform: translate(-100px, -10px);
+    }
+    .competence_container .comp_sql {
+        transform: translate(10px, -10px);
+    }
+    .competence_container .comp_autre {
+        transform: translate(120px, -10px);
+    }
+
     .competence_container ul {
         margin-top: 150px;
     }
@@ -1283,6 +1319,9 @@ section {
         margin-left: 60px;
     }
     /* ------------------------------------Section competence -----------------------------*/
+    #section_competence {
+        min-height: 600px;
+    }
     .competence_container .SF {
         width: 70%;
         text-align: center;
@@ -1290,8 +1329,11 @@ section {
     .competence_container h4 {
         font-size: 1em;
     }
+    .competence_container .descr_intro {
+        margin-top: 170px;
+    }
     .competence_container ul {
-        margin-top: 175px;
+        margin-top: 80px;
     }
     .comp_html:hover ~ .descr_html {
         transform: scale(1.2) translateY(26px);
@@ -1318,6 +1360,9 @@ section {
     }
     .portfolio_description {
         margin-top: 90px;
+    }
+    .articleJson a {
+        font-size: initial;
     }
     /* ------------------------------------Section contact -----------------------------*/
     #section_contact #comment_textarea {

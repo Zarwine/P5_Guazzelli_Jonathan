@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jonathan Guazzelli - Développeur web</title>
-    <meta name="description" content="Portfolio de Jonathan Guazzelli"> 
+    <meta name="description" content="Portfolio de Jonathan Guazzelli">
     <link rel="shortcut icon" type="image/ico" href="<?php echo ASSETS; ?>/img/user-tie-solid.svg">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>css/style.css">
     <link rel="stylesheet" href="<?php echo ASSETS; ?>fontawesome/css/all.css">
@@ -25,7 +25,7 @@
             </div>
             <ul class="nav-item end-row">
 
-            <?php if(strpos($_SERVER['REQUEST_URI'], "home") !== false) : ?>              
+                <?php if (strpos($_SERVER['REQUEST_URI'], "home") !== false) : ?>
                     <li class="link_jf">
                         <a class="smart_ancre1" href="#anchor_section_service">Services</a>
                     </li>
@@ -110,6 +110,25 @@
                                     Se connecter
                                 </a>
                             </li>
+                        <?php endif; ?>
+                        <?php if (strpos($_SERVER['REQUEST_URI'], "home") !== false) : ?>
+                            <li><hr></li>
+                            <li class="link_jf">
+                                <a class="smart_ancre1" href="#anchor_section_service">Services</a>
+                            </li>
+                            <li class="link_jf">
+                                <a class="smart_ancre2" href="#anchor_section_competence">Compétences</a>
+                            </li>
+                            <li class="link_jf">
+                                <a class="smart_ancre3" href="#anchor_section_portfolio">Portfolio</a>
+                            </li>
+                            <li class="link_jf">
+                                <a class="smart_ancre4" href="#anchor_section_apropos">A propos</a>
+                            </li>
+                            <li class="link_jf">
+                                <a class="smart_ancre5" href="#anchor_section_contact">Contact</a>
+                            </li>
+ 
                         <?php endif; ?>
                     </ul>
                 </div>

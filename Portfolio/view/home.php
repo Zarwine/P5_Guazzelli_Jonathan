@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <div class="sidebar">
     <div class="sidebar_arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
     <h2>Section commentaire</h2>
-    <p>Vous pouvez voir et poster des commentaires sur les articles suivants :</p>
+    <p>Vous pouvez voir et poster des commentaires sur les projets suivants :</p>
     <br />
     <ul>
         <?php foreach ($pf_articles as $pf_article) : ?>
@@ -28,7 +28,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <a class="anchor" id="anchor_section_service"></a>
 <section id="section_service">
     <h1>Mes services</h1>
-    <h2>Des prestations adaptés à vos besoins</h2>
+    <h2>Des prestations adaptées à vos besoins</h2>
     <div class="service_container">
         <div class="liste_gauche">
             <ul>
@@ -55,7 +55,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <li>
                 <i class="icone_service fas fa-pen"></i>
                     <h4>Dynamisme des pages</h4>
-                    <p>Des animations de contenu non intrusives pour embellier votre projet.</p>
+                    <p>Des animations de contenu non intrusives pour embellir votre projet.</p>
                 </li>
                 <li>
                     <i class="icone_service fas fa-tasks"></i>
@@ -115,10 +115,10 @@ if (session_status() == PHP_SESSION_NONE) {
         <h4 class="comp_php">PHP</h4>
         <ul class="descr_php">
             <li>Architecture MVC</li>
-            <li>Gestion de sessions utilisateur ( + hiérarchie )</li>
+            <li>Gestion de sessions utilisateur</li>
             <li>Protection faille XSS,SQL ou Bruteforce</li>
             <li>Utilisation de Namespaces</li>
-            <li>création de template HTML</li>
+            <li>Création de template HTML</li>
             <li>Hashage de données</li>
         </ul>
         <h4 class="comp_sql">SQL</h4>
@@ -214,7 +214,7 @@ if (session_status() == PHP_SESSION_NONE) {
         </form>
     </div>
     <div class="contact_footer">
-    <p>Site réalisé dans le cadre d'une formation Openclassrooms de novembre 2019 à mai 2020.</p>
+    <p>Projet réalisé dans le cadre d'une formation Openclassrooms de novembre 2019 à mai 2020.</p>
     </div>
 </section>
 
