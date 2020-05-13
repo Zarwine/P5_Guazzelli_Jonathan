@@ -45,14 +45,14 @@ if ($_SESSION['auth']->admin == 0) {
                     failure('HTTP Error: ' + xhr.status);
                     return;
                 }
-                console.log(xhr.responseText)
+              
                 json = JSON.parse(xhr.responseText);
 
                 if (!json || typeof json.location != 'string') {
                     failure('Invalid JSON: ' + xhr.responseText);
                     return;
                 }
-                console.log(json.location)
+              
                 success(json.location);
             };
 

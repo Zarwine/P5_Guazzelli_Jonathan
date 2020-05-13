@@ -55,7 +55,6 @@ class Member
             $_SESSION['flash']['success'] = 'Votre compte a bien été validé';
             header('Location: https://jogu.fr/home');
         } else {
-            $_SESSION['flash']['danger'] = "Ce token n'est plus valide";
             header('Location: https://jogu.fr/home');
         }
     }

@@ -139,16 +139,20 @@ class AccountPagination {
     }
 
     initPageNumber(totalPage) {
-
+        //Effectue une opération pour définir le nombre de page en divisant le nombre d'article total par le nombre d'article 
+        //demandé par page.
         totalPage = Math.floor(this.comments.length / this.pageContent)
+
+        //Si la division laisse un reste alors nous ajoutons une page.
         let lastPage = this.comments.length % this.pageContent
 
         if (lastPage != 0) {
             totalPage++
         }
-        this.totalPage = totalPage
+        this.totalPage = totalPage                  
 
-
+        //Pour chaque page : On ajoute un élément représentant la page dans le document
+        // + Un évenement permettant d'afficher la page en question.
         for (let i = 0; i < totalPage; i++) {
             let pageContainer = document.getElementById("com_pagination_pages")
             let newPage = document.createElement("div")

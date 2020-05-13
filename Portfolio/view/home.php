@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
 ?>
 <div class="sidebar">
     <div class="sidebar_arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-    <h2>Section commentaire</h2>
+    <h2>Section commentaires</h2>
     <p>Vous pouvez voir et poster des commentaires sur les projets suivants :</p>
     <br />
     <ul>
