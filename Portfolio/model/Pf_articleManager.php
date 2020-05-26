@@ -5,7 +5,7 @@ use PDO;
 
 require_once (MODEL.'Pf_article.php');
 
-class Pf_articleManager extends Database //Traite toute la partie BDD des articles du site
+class Pf_articleManager extends Database //Hérite de la class Database. Traite toute la partie BDD des articles du site
 {
     public function findAll() //Trouve tous les articles
     {

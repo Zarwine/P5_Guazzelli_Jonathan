@@ -92,11 +92,11 @@ class Routeur
         if (key_exists($route, $this->routes)) { //S'il existe une route 
 
 
-            $controller = "Portfolio\\controller\\" . $this->routes[$route]['controller'];
-            $method     = $this->routes[$route]['method'];
-            $currentController = new $controller(); 
+            $controller = "Portfolio\\controller\\" . $this->routes[$route]['controller'];  //Définis le Controller: Home par exemple
+            $method     = $this->routes[$route]['method'];                                  
+            $currentController = new $controller();                                         //Trouve la méthode: showHome par exemple
        
-            $currentController->$method($params);
+            $currentController->$method($params);                                           //Résultat : Home->showHome($params)
 
         }else if(!isset($_GET['r'])){        //Si $route = null --> Homepage
             header('Location: home');

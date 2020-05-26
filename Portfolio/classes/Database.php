@@ -3,7 +3,7 @@ namespace Portfolio\classes;
 use PDO;
 use PDOException;
 
-class Database { //Class Parent de jf_usermanager.php, se connecte a la BDD
+class Database { //Class Parent de pf_usermanager.php, se connecte a la BDD
  
     protected $bdd;
     
