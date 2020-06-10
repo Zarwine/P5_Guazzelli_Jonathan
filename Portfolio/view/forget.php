@@ -6,7 +6,7 @@
         <label for="">Email</label>
         <input type="email" name="email" required/>
     </div>
-    <button type="submit" class="button_jf">Réinitialiser mon mot de passeé</button>
+    <button type="submit" class="button_jf">Réinitialiser mon mot de passe</button>
 
 </form>
 </div>
