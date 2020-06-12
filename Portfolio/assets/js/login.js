@@ -32,4 +32,3 @@ class LoginManager {
 
     }
 }
-let loginManager = new LoginManager()

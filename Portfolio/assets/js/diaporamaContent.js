@@ -99,7 +99,7 @@ class DiapoJson {
 
          this.container.appendChild(articleContainer)
          diapoJson.chapitresDiapo.push(articleContainer)
-         //console.log(diapoJson.chapitresDiapo)
+         
 
       })
       let article1 = document.querySelector('.article1')
@@ -107,28 +107,3 @@ class DiapoJson {
    }
 
 }
-
-let diapoJson = new DiapoJson("section_portfolio_JSON", 'slider_prev_bottom', 'slider_next_bottom')
-//<section id="section_portfolio_JSON">
-//<div id="pf_articles_JSON"><?php echo $pf_articles_JSON?></div>
-
-      //stripHTML(text) { //Supprime tout ce qui se trouve entre <>
-      //   return text.replace(/<.*?>/gm, '');
-      //}
-      //findJson() {
-      //   var requete = new XMLHttpRequest();
-      //   requete.onreadystatechange = function () {
-      //      if (this.readyState == 4 && this.status == 200) {
-      //         var articles= this.responseText
-      //         articles.forEach( article => {
-      //            console.log(article)
-      //         })
-      //      }
-      //   }
-      //   requete.open('GET', 'https://jogu.fr/portfolio', true)
-      //   requete.send()
-      //}
-
-
-
-

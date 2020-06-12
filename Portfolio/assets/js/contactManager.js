@@ -56,4 +56,3 @@ class ContactManager {
 
     }
 }
-let contactManager = new ContactManager()

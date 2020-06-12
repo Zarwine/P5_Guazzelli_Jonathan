@@ -63,5 +63,3 @@ class Account
 
 }
 
-let account = new Account('account_view_article','view_account','account_view_comment','view_comment','account_view_comment_reported','view_comment_reported');
-

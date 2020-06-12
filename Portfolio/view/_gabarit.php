@@ -156,6 +156,7 @@
         </div>
     </footer>
     <script src="<?php echo ASSETS; ?>js/alert.js"></script>
+    <script src="<?php echo ASSETS; ?>js/_app.js"></script>
 </body>
 
 </html>

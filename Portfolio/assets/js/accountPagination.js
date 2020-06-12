@@ -189,4 +189,3 @@ class AccountPagination {
         }
     }
 }
-let accountPagination = new AccountPagination('article_comment_account', "com_pagination_prev", "com_pagination_next", "page")

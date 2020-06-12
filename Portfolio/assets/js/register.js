@@ -67,4 +67,3 @@ class RegisterManager {
 
     }
 }
-let registerManager = new RegisterManager()
