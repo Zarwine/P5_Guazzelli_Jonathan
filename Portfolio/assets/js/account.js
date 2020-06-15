@@ -1,63 +1,38 @@
-class Account
-{
-    constructor(art_target,art_view,com_target,com_view,com_target_r,com_view_r){
+class Account {
+    constructor(art_target, art_view, com_target, com_view, com_target_r, com_view_r) {
+        this.jf_articles = document.getElementById(art_target)
+        this.jf_comments = document.getElementById(com_target)
+        this.jf_comments_r = document.getElementById(com_target_r)
         
-        this.art_target = art_target;
-        this.art_view = art_view;
+        let view_button = document.querySelector("."+art_view)        
+        let com_view_button = document.querySelector("."+com_view)
+        let com_view_button_r = document.querySelector("."+com_view_r)
 
-        this.com_target = com_target;
-        this.com_view = com_view;
-
-        this.com_target_r = com_target_r;
-        this.com_view_r = com_view_r;
-
-        let view_button = document.getElementsByClassName(art_view);
-        view_button[0].addEventListener('click', this.showAllArticle);
-
-        let com_view_button = document.getElementsByClassName(com_view);
-        com_view_button[0].addEventListener('click', this.showAllComment);
-
-        let com_view_button_r = document.getElementsByClassName(com_view_r);
-        com_view_button_r[0].addEventListener('click', this.showAllComment_r);
+        view_button.addEventListener('click', this.showAllArticle.bind(this))
+        com_view_button.addEventListener('click', this.showAllComment.bind(this))
+        com_view_button_r.addEventListener('click', this.showAllComment_r.bind(this))
     }
-    showAllArticle(){
-
-        let jf_articles = document.getElementById(account.art_target);
-
-        if (jf_articles.classList.contains('container_not_visible')){
-            jf_articles.classList.replace('container_not_visible', 'container_visible')
-        }else {
-            jf_articles.classList.replace('container_visible', 'container_not_visible')
+    showAllArticle() {
+        this.toggleView(this.jf_articles)
+    }
+    showAllComment() {
+        this.toggleView(this.jf_comments)
+        this.clearView(this.jf_comments_r)
+    }
+    showAllComment_r() {
+        this.toggleView(this.jf_comments_r)
+        this.clearView(this.jf_comments)
+    }
+    toggleView(target) {
+        if (target.classList.contains('container_not_visible')) {
+            target.classList.replace('container_not_visible', 'container_visible')
+        } else {
+            target.classList.replace('container_visible', 'container_not_visible')
         }
     }
-    showAllComment(){
-
-        let jf_comments = document.getElementById(account.com_target);
-        let jf_comments_r = document.getElementById(account.com_target_r);
-
-        if (jf_comments.classList.contains('container_not_visible')){
-            jf_comments.classList.replace('container_not_visible', 'container_visible')
-        }else {
-            jf_comments.classList.replace('container_visible', 'container_not_visible')
-        }
-
-        if (jf_comments_r.classList.contains('container_visible')){
-            jf_comments_r.classList.replace('container_visible','container_not_visible')
-        }
-    }
-    showAllComment_r(){
-
-        let jf_comments_r = document.getElementById(account.com_target_r);
-        let jf_comments = document.getElementById(account.com_target);
-
-        if (jf_comments_r.classList.contains('container_not_visible')){
-            jf_comments_r.classList.replace('container_not_visible', 'container_visible')
-        }else {
-            jf_comments_r.classList.replace('container_visible', 'container_not_visible')
-        }
-
-        if (jf_comments.classList.contains('container_visible')){
-            jf_comments.classList.replace('container_visible','container_not_visible')
+    clearView(target) {
+        if (target.classList.contains('container_visible')) {
+            target.classList.replace('container_visible', 'container_not_visible')
         }
     }
 
