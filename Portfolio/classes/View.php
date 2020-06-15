@@ -1,38 +1,30 @@
 <?php
+
 namespace Portfolio\classes;
+
 use Portfolio\classes\DateFormat;
 
 class View
 {
-    
     private $template;
-
     public function __construct($template = null)
     {
         $this->template = $template;
     }
 
     public function render($params = array()) //ajoute le contenu de la page à la variable $contentPage
-    {   
-
+    {
         extract($params);
-
         $template = $this->template;
-
         ob_start();
-
-        include (VIEW.$template.'.php');
+        include(VIEW . $template . '.php');
         $contentPage = ob_get_clean();
-        
-        include_once (VIEW.'_gabarit.php');
-        
-        
-    
+        include_once(VIEW . '_gabarit.php');
     }
 
     public function redirect($route)
     {
-        header("Location: ".HOST.$route);
+        header("Location: " . HOST . $route);
         exit;
     }
 }

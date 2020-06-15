@@ -10,7 +10,6 @@ if (typeof Alert !== "undefined") {
 if (typeof ContactManager !== "undefined") {
     var contactManager = new ContactManager()
 }
-
 if (typeof LoginManager !== "undefined") {
     var loginManager = new LoginManager()
 }

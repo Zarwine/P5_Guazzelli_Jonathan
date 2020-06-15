@@ -1,4 +1,5 @@
 <?php
+
 namespace Portfolio\classes;
 
 
@@ -7,7 +8,6 @@ class Routeur
     private $request;
 
     private $routes = [
-
         "home"                => ["controller" => "Home",   "method" => "showHome"],                //Rediction vers la HomePage
         "contact_form"        => ["controller" => "Home",   "method" => "sendEmail"],
 
@@ -46,8 +46,7 @@ class Routeur
         "com_view"            => ["controller" => "Comment",   "method" => "showArticle"],          //Fin Commentaires
 
         "portfolio"           => ["controller" => "Json",               "method" => "showPortfolioJson"],    //Chargement JSON
-        "TinyMCEImageUpload"  => ["controller" => "TinyMCEImageUpload", "method" => "uploadImg"],    //
-        
+        "TinyMCEImageUpload"  => ["controller" => "TinyMCEImageUpload", "method" => "uploadImg"],
     ];
 
     public function __construct($request)
@@ -64,10 +63,8 @@ class Routeur
     public function getParams() //recupère les parametres suivants la route pour les redirections d'article défini par exemple
     {
         $params = null;
-
         $elements = explode('/', $this->request);
         unset($elements[0]);
-
         for ($i = 1; $i < count($elements); $i++) {
             $params[$elements[$i]] = $elements[$i + 1];
             $i++;
@@ -77,34 +74,24 @@ class Routeur
                 $params[$key] = $val;
             }
         }
-
         return $params;
     }
 
-
     public function renderController()
     {
-
         $route = $this->getRoute();    //Explose l'url et récupère le premier élément
         $params = $this->getParams();  //Récupère l'élement après $route pour le passer en paramettre 
-
-
         if (key_exists($route, $this->routes)) { //S'il existe une route 
-
-
             $controller = "Portfolio\\controller\\" . $this->routes[$route]['controller'];  //Définis le Controller: Home par exemple
-            $method     = $this->routes[$route]['method'];                                  
-            $currentController = new $controller();                                         //Trouve la méthode: showHome par exemple
-       
+            $method     = $this->routes[$route]['method'];
+            $currentController = new $controller();                                         //Trouve la méthode: showHome par exemple       
             $currentController->$method($params);                                           //Résultat : Home->showHome($params)
-
-        }else if(!isset($_GET['r'])){        //Si $route = null --> Homepage
+        } else if (!isset($_GET['r'])) {        //Si $route = null --> Homepage
             header('Location: home');
         } else {
-           session_start();                 //Sinon la route n'existe pas
-           $_SESSION['flash']['danger'] = "Erreur 404 reçue : La page demandée n'existe pas : ". $route;
-           header('Location: https://jogu.fr/home');
+            session_start();                 //Sinon la route n'existe pas
+            $_SESSION['flash']['danger'] = "Erreur 404 reçue : La page demandée n'existe pas : " . $route;
+            header('Location: https://jogu.fr/home');
         }
-
     }
 }

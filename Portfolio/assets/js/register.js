@@ -5,15 +5,12 @@ class RegisterManager {
         this.password = document.getElementById("password")
         this.password_confirm = document.getElementById("password_confirm")
         this.btn_register = document.getElementById("btn_register")
-
         this.error_username = document.getElementById("error_username");
         this.error_email = document.getElementById("error_email")
         this.error_password = document.getElementById("error_password")
         this.error_password_confirm = document.getElementById("error_password_confirm")
 
-
         this.btn_register.addEventListener("click", e=>{
-
             this.formValidation()
         })
     }
@@ -22,13 +19,11 @@ class RegisterManager {
                 //regex pour les champs à compléter
                 let formatValid = /^[a-zA-Z*(é|è|à|ù)]+(([',. -][a-zA-Z ])?[a-zA-Z*(é|è|à|ù)]*)*$/
                 let formatEmail = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
-
                 //nettoyage des précédents messages d'erreurs
                 this.error_username.textContent = ""
                 this.error_email.textContent = ""
                 this.error_password.textContent = ""
                 this.error_password_confirm.textContent = ""
-
                 //Revue des conditions d'erreurs et affichage des messages correspondants
                 if (this.username.validity.valueMissing) {
                     event.preventDefault()
@@ -64,6 +59,5 @@ class RegisterManager {
                     this.error_password_confirm.textContent = "Les mots de passe ne correspondent pas"
                     this.error_password_confirm.style.color = 'red'
                 }
-
     }
 }

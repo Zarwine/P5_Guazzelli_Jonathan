@@ -11,7 +11,7 @@ class TinyMCEImageUpload
      * Only these origins are allowed to upload images *
      ***************************************************/
     //Guide addresse : https://www.tiny.cloud/docs/advanced/php-upload-handler/
-    $accepted_origins = array("http://localhost", "http://192.168.1.1","https://jogu.fr");
+    $accepted_origins = array("http://localhost", "http://192.168.1.1", "https://jogu.fr");
 
     /*********************************************
      * Change this line to set the upload folder *
