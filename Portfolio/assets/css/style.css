@@ -771,6 +771,7 @@ section {
 }
 /* ------------------------------------ Footer        --------------------------------------*/
 .btn_up {
+    transition: all 0.4s ease;
     position: fixed;
     right: 10px;
     bottom: 10px;

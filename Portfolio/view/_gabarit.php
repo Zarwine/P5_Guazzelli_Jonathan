@@ -152,9 +152,10 @@
     </main>
     <footer>
         <div class="btn_up">
-            <a id="cRetour" href="#"><i class="fas fa-arrow-circle-up icon-btn_up"></i></a>
+            <a id="cRetour" href="#"><i class="fas fa-angle-double-up icon-btn_up"></i></a>
         </div>
     </footer>
+    <script src="<?php echo ASSETS; ?>js/BackToTop.js"></script>
     <script src="<?php echo ASSETS; ?>js/alert.js"></script>
     <script src="<?php echo ASSETS; ?>js/_app.js"></script>
 </body>

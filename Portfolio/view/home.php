@@ -145,10 +145,10 @@ if (session_status() == PHP_SESSION_NONE) {
 <section id="section_portfolio_JSON">
     <h1>Mes réalisations</h1>
     <div class="btn_container btn_container_bottom">
-        <a href="#anchor_section_portfolio" id="slider_prev_bottom"><i class="fas fa-arrow-circle-left icon-burger"></i></a>
+        <a href="#anchor_section_portfolio" id="slider_prev_bottom"><i class="fas fa-caret-left icon-burger"></i></a>
         <div id="portfolio_pagination_pages">
         </div>
-        <a href="#anchor_section_portfolio" id="slider_next_bottom"><i class="fas fa-arrow-circle-right icon-burger"></i></a>
+        <a href="#anchor_section_portfolio" id="slider_next_bottom"><i class="fas fa-caret-right icon-burger"></i></a>
     </div>
     <div class="portfolio_description">
         <p>Visualisez les différents projets sur lesquels j'ai travaillé</p>

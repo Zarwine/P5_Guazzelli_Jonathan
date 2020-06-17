@@ -19,3 +19,6 @@ if (typeof RegisterManager !== "undefined") {
 if (typeof DiapoJson !== "undefined") {
     var diapoJson = new DiapoJson("section_portfolio_JSON", 'slider_prev_bottom', 'slider_next_bottom')
 }
+if (typeof BackToTop !== "undefined") {
+    var backToTop = new BackToTop('.btn_up')
+}
