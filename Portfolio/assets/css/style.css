@@ -516,6 +516,10 @@ section {
     text-align: center;
     margin: 0 5%;
 }
+.JSON_link_container{
+    width: fit-content;
+    margin: auto;
+}
 
 /* ------------------------------------ Section portfolio --------------------------------------*/
 #section_portfolio {
@@ -751,7 +755,6 @@ section {
     font-size: 2em;
 }
 .articleJson a {
-    background-color: rgb(50,50,50);
     padding: 10px;
     border-radius: 3px;
     color: rgb(200,200,200);
@@ -759,19 +762,13 @@ section {
     transition: all 0.4s ease;
 }
 .article_content a {
-    background-color: rgb(50,50,50);
     padding: 10px;
     border-radius: 3px;
     color: rgb(200,200,200);
     text-decoration: none;
 }
-.article_content a:hover,
-.articleJson a:hover {
-    background-color: rgb(70,70,70);
-}
 /* ------------------------------------ Footer        --------------------------------------*/
 .btn_up {
-    transition: all 0.4s ease;
     position: fixed;
     right: 10px;
     bottom: 10px;
