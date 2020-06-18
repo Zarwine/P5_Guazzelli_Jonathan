@@ -19,7 +19,7 @@ if (session_status() == PHP_SESSION_NONE) {
 </div>
 
 <section id="section_intro">
-    <div class="bienvenue">
+    <div class="bienvenue reveal">
         <h1>Bienvenue !</h1>
         <h3>Je m'appelle Jonathan et je suis développeur web</h3>
     </div>
@@ -27,10 +27,10 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <a class="anchor" id="anchor_section_service"></a>
 <section id="section_service">
-    <h1>Mes services</h1>
-    <h2>Des prestations adaptées à vos besoins</h2>
+    <h1 class="reveal">Mes services</h1>
+    <h2 class="reveal">Des prestations adaptées à vos besoins</h2>
     <div class="service_container">
-        <div class="liste_gauche">
+        <div class="liste_gauche reveal">
             <ul>
                 <li>
                     <i class="icone_service fas fa-user-cog"></i>
@@ -49,8 +49,8 @@ if (session_status() == PHP_SESSION_NONE) {
                 </li>
             </ul>
         </div>
-        <img src="<?php echo ASSETS; ?>img/section_service_img.jpg" alt=''>
-        <div class="liste_droite">
+        <img class="reveal" src="<?php echo ASSETS; ?>img/section_service_img.jpg" alt=''>
+        <div class="liste_droite reveal">
             <ul>
                 <li>
                 <i class="icone_service fas fa-pen"></i>
@@ -74,8 +74,8 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <a class="anchor" id="anchor_section_competence"></a>
 <section id="section_competence">
-    <h1>Mes competences</h1>
-    <div class="competence_container">
+    <h1 class="reveal">Mes competences</h1>
+    <div class="competence_container reveal">
         <h3 class="HS">hardskill</h3>
         <h3 class="SF">Softskill</h3>
         <ul class="descr_intro">
@@ -143,14 +143,14 @@ if (session_status() == PHP_SESSION_NONE) {
 <a class="anchor" id="anchor_section_portfolio"></a>
 
 <section id="section_portfolio_JSON">
-    <h1>Mes réalisations</h1>
+    <h1 class="reveal">Mes réalisations</h1>
     <div class="btn_container btn_container_bottom">
         <a href="#anchor_section_portfolio" id="slider_prev_bottom"><i class="fas fa-caret-left icon-burger"></i></a>
         <div id="portfolio_pagination_pages">
         </div>
         <a href="#anchor_section_portfolio" id="slider_next_bottom"><i class="fas fa-caret-right icon-burger"></i></a>
     </div>
-    <div class="portfolio_description">
+    <div class="portfolio_description reveal">
         <p>Visualisez les différents projets sur lesquels j'ai travaillé</p>
     </div>
 </section>
@@ -158,7 +158,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <a class="anchor" id="anchor_section_apropos"></a>
 <section id="section_apropos">
     <div class="about_container">
-        <div class="about_text">
+        <div class="about_text reveal">
             <h1>A propos</h1>
             <h2>Je suis développeur web et j'aime ça</h2>
             <p>Le monde de l'informatique m'a toujours passionné et plus précisement celui du développement.
@@ -180,8 +180,8 @@ if (session_status() == PHP_SESSION_NONE) {
 <a class="anchor" id="anchor_section_contact"></a>
 <section id="section_contact">
     <div class="contact_container">
-        <h1>Me Contacter</h1>
-        <form class="jf_form" action="contact_form" method="POST">
+        <h1 class="reveal">Me Contacter</h1>
+        <form class="jf_form reveal" action="contact_form" method="POST">
             <?php if (isset($_SESSION["auth"]->username)) : ?>
                 <div class="form-group">
                     <label for="username">Nom & Prénom :</label>

@@ -22,3 +22,6 @@ if (typeof DiapoJson !== "undefined") {
 if (typeof BackToTop !== "undefined") {
     var backToTop = new BackToTop('.btn_up')
 }
+if (typeof MyObserver !== "undefined") {
+    var myObserver = new MyObserver()
+}
