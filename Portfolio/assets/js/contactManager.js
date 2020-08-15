@@ -6,7 +6,8 @@ class ContactManager {
 
         this.btn_register = document.getElementById("btn_contact")
 
-        this.error_username = document.getElementById("error_username");
+        this.errorCount = 0
+        this.error_username = document.getElementById("error_username")
         this.error_email = document.getElementById("error_email")
         this.error_message = document.getElementById("error_message")
 
@@ -23,35 +24,43 @@ class ContactManager {
         let formatEmail = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
 
         //nettoyage des précédents messages d'erreurs
+        this.errorCount = 0
         this.error_username.textContent = ""
         this.error_email.textContent = ""
-        this.error_message.textContent = ""
-
+        this.error_message.textContent = "" 
         //Revue des conditions d'erreurs et affichage des messages correspondants
 
         if (formatValid.test(this.username.value) == false) {
             event.preventDefault()
             this.error_username.textContent = "Saisie incorrecte"
             this.error_username.style.color = 'red'
+            this.errorCount++
         } else if (this.username.validity.valueMissing) {
             event.preventDefault()
             this.error_username.textContent = "Pseudo manquant"
             this.error_username.style.color = 'red'
+            this.errorCount++
         }
         if (formatEmail.test(this.email.value) == false) {
             event.preventDefault()
             this.error_email.textContent = "Format d'Email incorrect"
             this.error_email.style.color = 'red'
+            this.errorCount++
         } else if (this.email.validity.valueMissing) {
             event.preventDefault()
             this.error_email.textContent = "Email manquant"
             this.error_email.style.color = 'red'
+            this.errorCount++
         }
 
-        if (this.message.value == "") {
+        if (this.message.value.trim() == "") {
             event.preventDefault()
             this.error_message.textContent = "Message vide"
             this.error_message.style.color = 'red'
+            this.errorCount++
+        }
+        if(this.errorCount == 0){
+        captcha.validCaptcha()
         }
 
     }

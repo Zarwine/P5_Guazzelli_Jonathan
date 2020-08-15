@@ -210,6 +210,12 @@ if (session_status() == PHP_SESSION_NONE) {
                 <textarea name="message" id="comment_textarea" cols="30" rows="10" placeholder="Votre message..."></textarea>
                 <div id="error_message"></div>
             </div>
+            <div id="captcha_container" class="form-group">
+                <p id="captcha">Combien font <span id="captcha_first"></span> + <span id="captcha_second"></span> ?</p>
+                <div id="refresh_captcha">C'est trop compliqué ? Rafraîchir : <i class="fas fa-sync-alt"></i></div>
+                <label for="captcha">Résultat :</label>
+                <input id="captcha_input" placeholder="Indiquez un nombre..." type="captcha" name="captcha" />
+            </div>
             <button id="btn_contact" type="submit" class="button_jf">ENVOYER</button>
         </form>
     </div>
@@ -220,3 +226,4 @@ if (session_status() == PHP_SESSION_NONE) {
 
 <script src="<?php echo ASSETS; ?>js/diaporamaContent.js"></script>
 <script src="<?php echo ASSETS; ?>js/contactManager.js"></script>
+<script src="<?php echo ASSETS; ?>js/captcha.js"></script>

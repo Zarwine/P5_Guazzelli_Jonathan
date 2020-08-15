@@ -23,7 +23,7 @@ class Home
         session_start();
         if (!isset($_SESSION["auth"]->username)) {
             $_SESSION['flash']['success'] = 'Votre e-mail a bien été envoyé';
-            mail("jonathanguazzelli@hotmail.fr", 'Message de Jogu.fr', "De la part de " . $params["username"] . $params["email"] . "\r\nMessage : " . $params["message"]);
+            mail("jonathanguazzelli@hotmail.fr", 'Message de Jogu.fr', "De la part de " . $params["username"] . " - " . $params["email"] . "\r\nMessage : " . $params["message"]);
         } else {
             $_SESSION['flash']['success'] = 'Votre e-mail a bien été envoyé';
             mail("jonathanguazzelli@hotmail.fr", 'Message de Jogu.fr', "De la part de " . $_SESSION["auth"]->username . " alias " . $params["username"] . "\r\nEmail : " . $_SESSION["auth"]->email . " alias " . $params["email"] . "\r\nMessage : " . $params["message"]);

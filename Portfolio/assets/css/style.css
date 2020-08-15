@@ -653,7 +653,7 @@ section {
     url("../../assets/img/jogu_bg_contact_2500.jpg");
     background-size: cover;
     color: rgb(45, 65, 105);
-    text-shadow: 1px 1px 0px black;
+    font-weight: 600;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
@@ -718,6 +718,21 @@ section {
 #section_contact .button_jf:hover {
     background-color: black;
 }
+#refresh_captcha{
+    cursor: pointer;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    display:none;
+}
+#captcha_container label{
+    width: auto;
+}
+#captcha_input{
+    width: 30% !important;
+    margin-left: 10px;
+    margin-top: -10px;
+}
+
 /* ------------------------------------ Article seul --------------------------------------*/
 .com_crud {
     display: flex;
@@ -1039,7 +1054,9 @@ background-color: inherit;
 .account_gestion .form-control {
     width: 200px;
 }
-
+.visible_important {
+    display:block !important;
+}
 /* ________________________________________________________________________________________________________________________________*/
 /* ________________________________________________________________________________________________________________________________*/
 /* _________________________________________________________TinyMCE________________________________________________________________*/
