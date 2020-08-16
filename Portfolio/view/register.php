@@ -1,6 +1,6 @@
 <?php session_start();
 ?>
-<div class="page_container">
+<div class="page_container_login">
 <h2>S'inscrire</h2>
 
 <form class="jf_form" action="register_confirm" method="POST">

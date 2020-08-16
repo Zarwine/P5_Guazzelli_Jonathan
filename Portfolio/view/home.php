@@ -53,7 +53,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <div class="liste_droite reveal">
             <ul>
                 <li>
-                <i class="icone_service fas fa-pen"></i>
+                    <i class="icone_service fas fa-pen"></i>
                     <h4>Dynamisme des pages</h4>
                     <p>Des animations de contenu non intrusives pour embellir votre projet.</p>
                 </li>
@@ -218,9 +218,6 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
             <button id="btn_contact" type="submit" class="button_jf">ENVOYER</button>
         </form>
-    </div>
-    <div class="contact_footer">
-    <p>Projet réalisé dans le cadre d'une formation Openclassrooms de novembre 2019 à mai 2020.</p>
     </div>
 </section>
 

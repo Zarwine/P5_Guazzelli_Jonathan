@@ -5,7 +5,7 @@ if(isset($_SESSION['auth'])){
     exit();
 }
 ?>
-<div class="page_container">
+<div class="page_container_login">
 
 <h2>Se connecter</h2>
 

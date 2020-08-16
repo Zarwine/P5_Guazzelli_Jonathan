@@ -150,11 +150,51 @@
 
         <?php echo $contentPage; ?>
     </main>
-    <footer>
-        <div class="btn_up">
+    <footer>    <div class="contact_footer">
+        <div class="footer_up">
+            <a href="https://www.linkedin.com/in/jonathan-guazzelli-34908718b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/jonathan.guazzelli?ref=bookmarks" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div class="footer_left">
+            <h4>DÉVELOPPEUR INFORMATIQUE</h4>
+            <p>Développeur Web front & back-end & Webdesigner, je suis ouvert à tout type de projets de création de sites internet, de développement spécifique ou d'applications web.</p>
+            <p>Passionné par les technologies liées au Web, j'adore élargir mes compétences et explorer le monde de la programmation.</p>
+        </div>
+        <div class="footer_right">
+            <div class="footer_right_container">
+                <h4>JONATHAN GUAZZELLI</h4>
+            </div>
+            <div class="footer_right_container">
+                <i class="fas fa-map-marker-alt"></i>
+                <a href="https://www.google.fr/maps/place/4+Rue+du+14+Juillet+1789,+13720+La+Bouilladisse/@43.3984717,5.6175524,17z/data=!3m1!4b1!4m5!3m4!1s0x12c99916af03db81:0x92c8f23cedc8e1dd!8m2!3d43.3984678!4d5.6197411" target="_blank">
+                    <p>4 Rue du 14 juillet 1789<br>
+                        13720 La Bouilladisse</p>
+                </a>
+            </div>
+            <div class="footer_right_container">
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+33614956732">
+                    <p>(+33) 6 14 95 67 32</p>
+                </a>
+            </div>
+            <div class="footer_right_container">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:jonathanguazzelli@hotmail.fr">
+                    <p>jonathanguazzelli@hotmail.fr</p>
+                </a>
+            </div>
+            <div class="footer_right_container">
+                <i class="fas fa-user-tie"></i>
+                <a href="https://jogu.fr">
+                    <p>https://jogu.fr</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    </footer>
+    <div class="btn_up">
             <a id="cRetour" href="#"><i class="fas fa-angle-double-up icon-btn_up"></i></a>
         </div>
-    </footer>
     <script src="<?php echo ASSETS; ?>js/IntersectionObserver.js"></script>
     <script src="<?php echo ASSETS; ?>js/BackToTop.js"></script>
     <script src="<?php echo ASSETS; ?>js/alert.js"></script>
