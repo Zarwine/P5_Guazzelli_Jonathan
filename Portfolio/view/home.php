@@ -213,8 +213,8 @@ if (session_status() == PHP_SESSION_NONE) {
             <div id="captcha_container" class="form-group">
                 <p id="captcha">Combien font <span id="captcha_first"></span> + <span id="captcha_second"></span> ?</p>
                 <div id="refresh_captcha">C'est trop compliqué ? Rafraîchir : <i class="fas fa-sync-alt"></i></div>
-                <label for="captcha">Résultat :</label>
-                <input id="captcha_input" placeholder="Indiquez un nombre..." type="captcha" name="captcha" />
+                <label for="captcha_input">Résultat :</label>
+                <input id="captcha_input" placeholder="Indiquez un nombre..." type="number" name="captcha" />
             </div>
             <button id="btn_contact" type="submit" class="button_jf">ENVOYER</button>
         </form>
