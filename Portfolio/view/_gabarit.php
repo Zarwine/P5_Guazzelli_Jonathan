@@ -166,9 +166,8 @@
             </div>
             <div class="footer_right_container">
                 <i class="fas fa-map-marker-alt"></i>
-                <a href="https://www.google.fr/maps/place/4+Rue+du+14+Juillet+1789,+13720+La+Bouilladisse/@43.3984717,5.6175524,17z/data=!3m1!4b1!4m5!3m4!1s0x12c99916af03db81:0x92c8f23cedc8e1dd!8m2!3d43.3984678!4d5.6197411" target="_blank">
-                    <p>4 Rue du 14 juillet 1789<br>
-                        13720 La Bouilladisse</p>
+                <a href="https://www.google.fr/maps/place/13720+La+Bouilladisse/@43.3942393,5.6085319,14z/data=!3m1!4b1!4m5!3m4!1s0x12c9993d37b7da9f:0x40819a5fd970490!8m2!3d43.394132!4d5.593219" target="_blank">
+                    <p>13720 La Bouilladisse</p>
                 </a>
             </div>
             <div class="footer_right_container">
