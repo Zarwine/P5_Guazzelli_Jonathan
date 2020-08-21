@@ -3,21 +3,6 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 ?>
-<div class="sidebar">
-    <div class="sidebar_arrow"><i class="fas fa-long-arrow-alt-right"></i></div>
-    <h2>Section commentaires</h2>
-    <p>Vous pouvez voir et poster des commentaires sur les projets suivants :</p>
-    <br />
-    <ul>
-        <?php foreach ($pf_articles as $pf_article) : ?>
-            <li>
-                <a href="<?php echo HOST; ?>view/id/<?php echo $pf_article->getId(); ?>" class="titre_article"><?php echo htmlspecialchars($pf_article->getName()); ?></a>
-                <br />
-            </li>
-        <?php endforeach; ?>
-    </ul>
-</div>
-
 <section id="section_intro">
     <div class="bienvenue reveal">
         <h1>Bienvenue !</h1>
@@ -64,7 +49,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 </li>
                 <li>
                     <i class="icone_service fas fa-mobile-alt"></i>
-                    <h4>Responsiv design</h4>
+                    <h4>Responsive design</h4>
                     <p>Compatible tous supports, tablette & application mobile.</p>
                 </li>
             </ul>

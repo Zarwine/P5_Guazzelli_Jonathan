@@ -112,7 +112,9 @@
                             </li>
                         <?php endif; ?>
                         <?php if (strpos($_SERVER['REQUEST_URI'], "home") !== false) : ?>
-                            <li><hr></li>
+                            <li>
+                                <hr>
+                            </li>
                             <li class="link_jf">
                                 <a class="smart_ancre1" href="#anchor_section_service">Services</a>
                             </li>
@@ -128,7 +130,7 @@
                             <li class="link_jf">
                                 <a class="smart_ancre5" href="#anchor_section_contact">Contact</a>
                             </li>
- 
+
                         <?php endif; ?>
                     </ul>
                 </div>
@@ -150,50 +152,51 @@
 
         <?php echo $contentPage; ?>
     </main>
-    <footer>    <div class="contact_footer">
-        <div class="footer_up">
-            <a href="https://www.linkedin.com/in/jonathan-guazzelli-34908718b/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/jonathan.guazzelli?ref=bookmarks" target="_blank"><i class="fab fa-facebook"></i></a>
+    <footer>
+        <div class="contact_footer">
+            <div class="footer_left">
+                <h4>DÉVELOPPEUR INFORMATIQUE</h4>
+                <p>Développeur Web front & back-end & Webdesigner, je suis ouvert à tout type de projets de création de sites internet, de développement spécifique ou d'applications web.</p>
+                <p>Passionné par les technologies liées au Web, j'adore élargir mes compétences et explorer le monde de la programmation.</p>
+            </div>
+            <div class="footer_right">
+                <div class="footer_right_container">
+                    <h4>JONATHAN GUAZZELLI</h4>
+                </div>
+                <div class="footer_right_container">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="https://www.google.fr/maps/place/13720+La+Bouilladisse/@43.3942393,5.6085319,14z/data=!3m1!4b1!4m5!3m4!1s0x12c9993d37b7da9f:0x40819a5fd970490!8m2!3d43.394132!4d5.593219" target="_blank">
+                        <p>13720 La Bouilladisse</p>
+                    </a>
+                </div>
+                <div class="footer_right_container">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+33614956732">
+                        <p>(+33) 6 14 95 67 32</p>
+                    </a>
+                </div>
+                <div class="footer_right_container">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:jonathanguazzelli@hotmail.fr">
+                        <p>jonathanguazzelli@hotmail.fr</p>
+                    </a>
+                </div>
+                <div class="footer_right_container">
+                    <i class="fas fa-user-tie"></i>
+                    <a href="https://jogu.fr">
+                        <p>https://jogu.fr</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer_up">
+                <a class="linkedin" href="https://www.linkedin.com/in/jonathan-guazzelli-34908718b/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a class="facebook" href="https://www.facebook.com/jonathan.guazzelli?ref=bookmarks" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
         </div>
-        <div class="footer_left">
-            <h4>DÉVELOPPEUR INFORMATIQUE</h4>
-            <p>Développeur Web front & back-end & Webdesigner, je suis ouvert à tout type de projets de création de sites internet, de développement spécifique ou d'applications web.</p>
-            <p>Passionné par les technologies liées au Web, j'adore élargir mes compétences et explorer le monde de la programmation.</p>
-        </div>
-        <div class="footer_right">
-            <div class="footer_right_container">
-                <h4>JONATHAN GUAZZELLI</h4>
-            </div>
-            <div class="footer_right_container">
-                <i class="fas fa-map-marker-alt"></i>
-                <a href="https://www.google.fr/maps/place/13720+La+Bouilladisse/@43.3942393,5.6085319,14z/data=!3m1!4b1!4m5!3m4!1s0x12c9993d37b7da9f:0x40819a5fd970490!8m2!3d43.394132!4d5.593219" target="_blank">
-                    <p>13720 La Bouilladisse</p>
-                </a>
-            </div>
-            <div class="footer_right_container">
-                <i class="fas fa-phone-alt"></i>
-                <a href="tel:+33614956732">
-                    <p>(+33) 6 14 95 67 32</p>
-                </a>
-            </div>
-            <div class="footer_right_container">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:jonathanguazzelli@hotmail.fr">
-                    <p>jonathanguazzelli@hotmail.fr</p>
-                </a>
-            </div>
-            <div class="footer_right_container">
-                <i class="fas fa-user-tie"></i>
-                <a href="https://jogu.fr">
-                    <p>https://jogu.fr</p>
-                </a>
-            </div>
-        </div>
-    </div>
     </footer>
     <div class="btn_up">
-            <a id="cRetour" href="#"><i class="fas fa-angle-double-up icon-btn_up"></i></a>
-        </div>
+        <a id="cRetour" href="#"><i class="fas fa-angle-double-up icon-btn_up"></i></a>
+    </div>
     <script src="<?php echo ASSETS; ?>js/IntersectionObserver.js"></script>
     <script src="<?php echo ASSETS; ?>js/BackToTop.js"></script>
     <script src="<?php echo ASSETS; ?>js/alert.js"></script>

@@ -12,7 +12,7 @@ textarea {
 }
 html {
     scroll-behavior: smooth;
-  }
+}
 /* ________________________________________________________________________________________________________________________________*/
 /* ________________________________________________________________________________________________________________________________*/
 /* _________________________________________________________HEADER_________________________________________________________________*/
@@ -30,7 +30,7 @@ html {
     justify-content: space-around;
     align-items: center;
     z-index: 2;
-    box-shadow: 5px 5px 10px 0px black;
+    box-shadow: 2px 3px 30px 0px black;
 }
 header a{
     text-decoration: none;
@@ -647,13 +647,9 @@ section {
 }
 /* ------------------------------------ Section Contact --------------------------------------*/
 #section_contact {
-    min-height: 100vh;
     margin-top: 0;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0)),
-    url("../../assets/img/jogu_bg_contact_2500.jpg");
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../../assets/img/jogu_bg_contact.jpg);
     background-size: cover;
-    color: rgb(45, 65, 105);
-    font-weight: 600;
     display: flex;
     flex-flow: column wrap;
     justify-content: space-between;
@@ -663,9 +659,6 @@ section {
 }
 #section_contact .contact_container{
     margin: 0 20%;
-    background-color: rgba(250,250,250,0.6);
-    box-shadow: 2px 1px 20px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
 }
 #section_contact .contact_footer{
     text-align: center;
@@ -678,18 +671,17 @@ section {
 }
 #section_contact h1{
     text-shadow: 1px 1px 0px black;
-    color: rgb(45, 65, 105);
 }
 #section_contact label {
     margin: auto;
     width: 100%;
-    margin-bottom: 10px;
 }
 #section_contact .jf_form {
     padding: 30px 30%;
 }
 #section_contact .form-group{
     padding-left: 0px;
+    margin: 30px 0 0;
 }
 #section_contact .jf_form input{
     width: 100%;
@@ -698,22 +690,19 @@ section {
     background-color: rgb(50, 50, 50);
     padding: 20px;
     box-shadow: 1px 1px 1px black;
-    margin: auto;
+    margin: 10px auto 0;
 }
 #section_contact input,
 #section_contact textarea{
-    color: rgb(45, 65, 105);
-    padding: 2px;
-    border-radius: 3px;
-    text-shadow: 0px 1px 1px rgba(45, 65, 105, 1);
+    background-color: rgba(0,0,0,0);
+    border: none;
+    border-bottom: solid 2px rgb(180, 180, 180);
+    color: rgb(230,230,230);
+    margin-left: 5px;
 }
 #section_contact input::placeholder,
 #section_contact textarea::placeholder{
-    color: rgb(45, 65, 105);
-}
-#section_contact textarea{
-    background-color: rgba(0,0,0,0);
-    border: solid 1px rgb(100, 100, 100);
+    color: rgb(200, 200, 200);
 }
 #section_contact .button_jf:hover {
     background-color: black;
@@ -1077,8 +1066,9 @@ background-color: inherit;
 footer{
     width: 100%;
     position: absolute;
-    background-color: rgb(50,50,50);
     color: rgb(170, 170, 170);
+    background: url(../../assets/img/jogu_bg_2500.jpg);
+    background-position: bottom;
 }
 footer a,
 footer h4,
@@ -1099,13 +1089,12 @@ color: rgb(230,230,230);
     justify-content: space-between;
 }
 .footer_up {
-    width: 100%;
     font-size: 2em;
-    text-align: end;
-    background-color: rgb(40,40,40);
-}
-.footer_up i {
-    margin-right: 20px;
+    background-color: white;
+    height: fit-content;
+    padding: 10px 30px;
+    border-radius: 30px;
+    margin: 1%;
 }
 .footer_left {
     width: 40%;
@@ -1117,9 +1106,16 @@ color: rgb(230,230,230);
 .footer_right_container{
     display: flex;
     align-items: center;
+    line-height: 0px;
 }
 .footer_right_container i{
     margin-right: 16px;
+}
+.linkedin:hover {
+    color: rgb(14 118 168);
+}
+.facebook:hover {
+    color: rgb(59 89 152);
 }
 /* ________________________________________________________________________________________________________________________________*/
 /* ________________________________________________________________________________________________________________________________*/
@@ -1285,7 +1281,7 @@ color: rgb(230,230,230);
     }
 
     .competence_container ul {
-        margin-top: 150px;
+        margin-top: 350px;
     }
     .comp_html:hover ~ .descr_html {
         transform: scale(1.6) translateY(26px);
@@ -1335,6 +1331,10 @@ color: rgb(230,230,230);
         width: 100%;
         margin: 0;
     }
+    #section_contact input,
+#section_contact textarea{
+    margin-left: 0px;
+}
     /* ------------------------------------Création d'article       -----------------------------*/
     #container .jf_form {
         padding: 0;
@@ -1437,29 +1437,29 @@ color: rgb(230,230,230);
         font-size: 1em;
     }
     .competence_container .descr_intro {
-        margin-top: 170px;
+        margin-top: 340px;
     }
     .competence_container ul {
         margin-top: 80px;
     }
     .comp_html:hover ~ .descr_html {
-        transform: scale(1.2) translateY(26px);
+        transform: scale(1.2) translateY(40px);
     }
     .comp_css:hover ~ .descr_css {
         transform: scale(1.2) translateY(20px);
     }
     .comp_js:hover ~ .descr_js {
-        transform: scale(1.2) translateY(30px);
+        transform: scale(1.2) translateY(50px);
     }
     .comp_php:hover ~ .descr_php {
         transform: scale(0.9) translateY(45px) translateX(55px);
         margin-left: -46px;
     }
     .comp_sql:hover ~ .descr_sql {
-        transform: scale(1) translateY(15px);
+        transform: scale(1) translateY(25px);
     }
     .comp_autre:hover ~ .descr_autre {
-        transform: scale(1.5) translateY(20px);
+        transform: scale(1.5) translateY(45px);
     }
     /* ------------------------------------Section portfolio -----------------------------*/
     #section_portfolio_JSON .btn_container {
@@ -1474,6 +1474,10 @@ color: rgb(230,230,230);
     /* ------------------------------------Section contact -----------------------------*/
     #section_contact #comment_textarea {
         width: 100%;
+    }
+    .footer_up {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
     }
     /* ------------------------------------Formulaire Register -----------------------------*/
     .jf_form .form-group {
