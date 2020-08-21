@@ -485,6 +485,7 @@ section {
 #section_portfolio_JSON {
     background-color: rgba(0,0,0,0.8);
     margin-bottom: 40px;
+    padding-bottom: 100px;
 }
 #section_portfolio_JSON h1{
     padding-top: 25px;
@@ -593,7 +594,7 @@ section {
 }
 /* ------------------------------------ Section A propos --------------------------------------*/
 #section_apropos {
-    background: linear-gradient(180deg, rgba(10,10,10,0.8), transparent);
+    background: black;
 }
 #anchor_section_apropos {
     top: -120px;
