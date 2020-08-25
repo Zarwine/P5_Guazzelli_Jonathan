@@ -1,4 +1,5 @@
 <?php 
+include_once('DBinfo.php'); //Charge le fichier config.php qui permet le chargement automatique des autres fichiers
 include_once('_config.php'); //Charge le fichier config.php qui permet le chargement automatique des autres fichiers
 MyAutoLoad::start();
 use Portfolio\classes\Routeur;

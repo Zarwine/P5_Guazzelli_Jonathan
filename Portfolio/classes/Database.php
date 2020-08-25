@@ -13,7 +13,7 @@ class Database
     public function __construct()
     {
         try {
-            $this->bdd = new PDO("mysql:host=jogufrdkog533.mysql.db:3306;dbname=jogufrdkog533;charset=utf8", "jogufrdkog533", "MaBDD550");
+            $this->bdd = new PDO("mysql:host=jogufrdkog533.mysql.db:3306;dbname=" . BDDNAMEJOGU . ";charset=utf8", BDDNAMEJOGU, BDDPWDJOGU);
         } catch (PDOException $errorBDD) {
             session_start();
             $_SESSION['flash']['danger'] = "Erreur de la base de donnée reçue : " . $errorBDD->getMessage();
